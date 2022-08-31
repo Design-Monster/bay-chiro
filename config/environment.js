@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'ember-octane-boilerplate',
+    modulePrefix: 'bay-chiro',
     environment,
     rootURL: '/',
     locationType: 'history',

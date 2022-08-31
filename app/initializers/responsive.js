@@ -4,5 +4,4 @@ export function initialize(application) {
   application.inject('template', 'media', 'service:media');
 }
 
-export default {name: 'responsive', initialize,
-};
+export default { name: 'responsive', initialize };
