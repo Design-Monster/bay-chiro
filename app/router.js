@@ -1,11 +1,13 @@
 import EmberRouter from '@ember/routing/router';
-import config from 'ember-octane-boilerplate/config/environment';
+import config from 'bay-chiro/config/environment';
 
 export default class Router extends EmberRouter {
   location = config.locationType;
   rootURL = config.rootURL;
 }
 
-Router.map(function() {
-  this.route('example', function () {}); //must be written this way because of nested folder structure in routes
+Router.map(function () {
+  this.route('services', function () {});
+  this.route('visit', function () {});
+  this.route('about', function () {});
 });
