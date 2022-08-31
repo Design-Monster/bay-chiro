@@ -26,17 +26,17 @@
     {{#if (or (media 'isLarge') (media 'isWide'))}}
     <Dynamic::Ui::Footer />
     {{/if}}
-    {{#if (or (media 'isSmall') (media 'isMedium'))}}
-    {{!-- template-lint-disable no-duplicate-landmark-elements --}}
-    <nav local-class="services_page_mobile_navigation_container">
-      <div local-class="services_page_mobile_navigation">
-        <Dynamic::Ui::Navigation::Mobile 
-          @routeSlotOne={{this.welcomeRoute}} 
-          @routeSlotTwo={{this.servicesRoute}}
-          @routeSlotThree={{this.visitRoute}} 
-          @routeSlotFour={{this.aboutRoute}} />
-      </div>
-    </nav>
-    {{/if}}
   </footer>
+  {{#if (or (media 'isSmall') (media 'isMedium'))}}
+  {{!-- template-lint-disable no-duplicate-landmark-elements --}}
+  <nav local-class="services_page_mobile_navigation_container">
+    <div local-class="services_page_mobile_navigation">
+      <Dynamic::Ui::Navigation::Mobile 
+        @routeSlotOne={{this.welcomeRoute}} 
+        @routeSlotTwo={{this.servicesRoute}}
+        @routeSlotThree={{this.visitRoute}} 
+        @routeSlotFour={{this.aboutRoute}} />
+    </div>
+  </nav>
+  {{/if}}
 </div>

@@ -2,7 +2,7 @@
 @import 'global/breakpoints';
 @import 'mixins/ease_transition';
 
-.index_page {
+.services_page {
   display: flex;
   min-height: 100vh;
   flex: 1;
@@ -22,13 +22,14 @@
     overflow-y: auto;  
   }
 
-  .index_page_header_container {
-    position: sticky; 
+  .services_page_header_container {
+    position: fixed; 
     top: 0;
     display: flex;
-    height: $height_large;
-    min-height: $height_large;
-    margin: $margin_large $margin_medium $margin_medium;
+    width: 100%;
+    min-width: 100%;
+    height: $height_xxl;
+    min-height: $height_xxl;
     background-color: $color_white;
 
     @include breakpoint(large) {
@@ -45,14 +46,14 @@
       margin: 0 0 $margin_large;
     }
 
-    .index_page_desktop_navigation_container {
+    .services_page_desktop_navigation_container {
       z-index: 100;
       display: flex;
       width: 65%;
       min-width: 65%;
       flex: 1;
 
-      .index_page_desktop_navigation {
+      .services_page_desktop_navigation {
         display: flex;
         flex: 1;
         margin: 0 $margin_extra_small;
@@ -60,10 +61,11 @@
     }
   }
 
-  .index_page_body {
+  .services_page_body {
     display: flex;
     flex: 1;
     flex-direction: column;
+    margin-top: calc($margin_xxl + $margin_extra_small);
 
     @include breakpoint(large) {
       flex-direction: row;
@@ -73,7 +75,7 @@
       flex-direction: row;
     }
 
-    .index_page_content_container {
+    .services_page_content_container {
       flex: 1;
       overflow: auto;
 
@@ -85,7 +87,7 @@
         display: flex;
       }
 
-      .index_page_content {
+      .services_page_content {
         display: flex;
         flex: 1;
         margin: 0 $margin_medium $margin_large;
@@ -126,16 +128,19 @@
     }
   }
 
-  .index_page_footer_container {
+  .services_page_footer_container {
     display: flex;
     min-height: $height_large;
+  }
 
-    .index_page_mobile_navigation_container {
-      display: flex;
-      flex: 1;
-    }
+  .services_page_mobile_navigation_container {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    max-width: 100%;
 
-    .index_page_mobile_navigation {
+    .services_page_mobile_navigation {
       display: flex;
       flex: 1;
     }
