@@ -1,0 +1,36 @@
+@import 'global/variables';
+@import 'global/breakpoints';
+
+.logo {
+  display: flex;
+  flex: 1;
+  margin: 0 $margin_medium;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    display: flex;
+    color: $font_color_primary;
+    text-decoration: none;
+    cursor: default;
+    align-items: baseline;
+
+    &.hover_pointer {
+      &:hover {
+        color: $font_color_grey;
+        cursor: pointer;
+      }
+    }
+
+    &:visited {
+      color: $font_color_primary;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+  }
+}

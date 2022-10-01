@@ -1,25 +1,90 @@
 
 <Dynamic::Ui::Navigation::Skip-Link />
 <div local-class="about_page">
-  <header local-class="about_page_header_container">
-    <Dynamic::Ui::Header />
-      {{#if (or (media 'isLarge') (media 'isWide'))}}
-      <nav local-class="about_page_desktop_navigation_container">
-        <div local-class="about_page_desktop_navigation">
-        <Dynamic::Ui::Navigation::Desktop 
-          @routeSlotOne={{this.welcomeRoute}} 
-          @routeSlotTwo={{this.servicesRoute}}
-          @routeSlotThree={{this.visitRoute}} 
-          @routeSlotFour={{this.aboutRoute}} />
-        </div>
-      </nav>
-      {{/if}}
+  <header local-class="about_page_header">
+    <div local-class="about_page_logo_container">
+      <Dynamic::Ui::Navigation::Logo />
+    </div>
+    {{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+    <nav local-class="about_page_desktop_navigation_container">
+      <Dynamic::Ui::Navigation::Desktop 
+        @routeSlotOne={{this.welcomeRoute}} 
+        @routeSlotTwo={{this.servicesRoute}}
+        @routeSlotThree={{this.visitRoute}} 
+        @routeSlotFour={{this.aboutRoute}} />
+    </nav>
+    {{/if}}
   </header>
   <div local-class="about_page_body">
     <main local-class="about_page_content_container">
-      <div local-class="about_page_content">
-        This is the content section! What does this look like?
-      </div>
+
+        <span local-class="about_page_image_container">
+          <span local-class="about_page_image">
+            <picture>
+            {{#if (media 'isSmall')}}
+              <source 
+                srcset='/assets/images/building.png'
+                loading="eager"
+                alt={{@aboutPageImageOneAltLabel}}
+                type="image/webp">
+              <img
+                src='/assets/images/building.png'
+                loading="eager"
+                alt={{@aboutPageImageOneAltLabel}}>
+            {{/if}}
+            {{#if (media 'isMedium')}}
+              <source
+                srcset='/assets/images/building.png'
+                loading="eager"
+                alt={{@aboutPageImageOneAltLabel}}
+                type="image/webp">
+              <img
+                src='/assets/images/building.png'
+                loading="eager"
+                alt={{@aboutPageImageOneAltLabel}}>
+            {{/if}}
+            {{#if (media 'isLarge')}}
+              <source
+                srcset='/assets/images/building.png'
+                loading="eager" 
+                alt={{@aboutPageImageOneAltLabel}}
+                type="image/webp">
+              <img
+                src='/assets/images/building.png'
+                loading="eager"
+                alt={{@aboutPageImageOneAltLabel}}>
+            {{/if}}
+            {{#if (media 'isWide')}}
+              <source
+                srcset='/assets/images/building.png'
+                loading="eager"
+                alt={{@aboutPageImageOneAltLabel}}
+                type="image/webp">
+              <img
+                src='/assets/images/building.png'
+                loading="eager"
+                alt={{@aboutPageImageOneAltLabel}}>
+            {{/if}}
+            </picture>
+          </span> 
+        </span>
+
+        <div local-class="about_page_information_container">
+
+          <div local-class="about_page_heading">
+            <h1>DR. Blaine Curtis</h1>
+          </div>
+
+          <div local-class="about_page_copy">
+            <p>Dr. Blaine Curtis started Bay Chiropractic Center at the corner Park Street and Main Street in Rockland in May of 1996. Our goal has always been to provide complete, cutting edge chiropractic care in a comfortable and friendly office setting. We work in conjunction with medical physicians and physical therapists in the Midcoast area and with specialists throughout Maine to create the most comprehensive health treatment plans so that we can provide you with the best care available.</p>
+            <p>In addition to chiropractic adjustments, we offer a variety of therapies for treating pain and soft tissue damage in the office including, ultrasound, interferential, microcurrent, TENS, Kinesiotape, cold laser, and Radial Pulse Wave. We specialize in sports injuries and optimizing performance throughout training and competition.</p>
+          </div>
+
+          <div local-class="about_page_copy">
+            COPY - BULLET
+          </div>
+        </div>
+
     </main>
   </div>
   <footer local-class="about_page_footer_container">
@@ -27,16 +92,14 @@
     <Dynamic::Ui::Footer />
     {{/if}}
   </footer>
-  {{#if (or (media 'isSmall') (media 'isMedium'))}}
+  {{#if (media 'isSmall')}}
   {{!-- template-lint-disable no-duplicate-landmark-elements --}}
   <nav local-class="about_page_mobile_navigation_container">
-    <div local-class="about_page_mobile_navigation">
-      <Dynamic::Ui::Navigation::Mobile 
-        @routeSlotOne={{this.welcomeRoute}} 
-        @routeSlotTwo={{this.servicesRoute}}
-        @routeSlotThree={{this.visitRoute}} 
-        @routeSlotFour={{this.aboutRoute}} />
-    </div>
+    <Dynamic::Ui::Navigation::Mobile 
+      @routeSlotOne={{this.welcomeRoute}} 
+      @routeSlotTwo={{this.servicesRoute}}
+      @routeSlotThree={{this.visitRoute}} 
+      @routeSlotFour={{this.aboutRoute}} />
   </nav>
   {{/if}}
 </div>

@@ -1,48 +1,78 @@
 @import 'global/variables';
 @import 'global/breakpoints';
 
-.nav_menu_container {
-  display: flex;
+.nav_mobile {
+  display:  flex;
   flex: 1;
-  background-color: $color_white;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 
-  .nav_item_container {
+  .contact_container {
     display: flex;
-    min-height: $height_large;
+    height: $height_medium;
+    max-height: $height_medium;
+    margin: $margin_extra_small 0 0;
+
+    .phone_number {
+      margin: 0 $margin_small 0 $margin_extra_small;
+    }
+
+    img {
+      width: 180px;
+      max-width: 180px;
+      height: 25px;
+      max-height: 25px;
+    }
+  }
+
+  .nav_menu_container {
+    display: flex;
     flex: 1;
+    align-items: flex-end;
 
-    &:hover {
-      transform: scale(1.075);
-    }
-
-    .nav_link {
+    .nav_item_container {
       display: flex;
+      height: $height_large;
+      min-height: $height_large;
       flex: 1;
-      text-decoration: none;
+      background-color: $color_blue_primary;
+      border-radius: $border_radius_primary;
+      align-items: center;
 
-      &:visited {
-        color: $font_color_primary;
+      &.spaced {
+        margin: 0 $margin_extra_small 0 0;
       }
 
-      &:global(.active) {
-        height: $height_large;
-        color: $font_color_primary;
-        background-color: $color_blue_secondary;
+      &:hover {
+        transform: scale(1.025);
       }
-    }
 
-    .nav_item {
-      display: flex;
-      flex: 1;
-
-      .nav_item_text {
+      .nav_link {
         display: flex;
         flex: 1;
-        font-size: $font_size_medium;
-        justify-content: center;
+        text-decoration: none;
         align-items: center;
+
+        &:visited {
+          color: $font_color_dark;
+        }
+
+        &:global(.active) {
+          height: $height_large;
+          color: $font_color_dark;
+          background-color: $color_blue_primary;
+          border-radius: $border_radius_primary;
+        }
+      }
+
+      .nav_item {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+
+        .nav_item_text {
+          padding: $padding_extra_small;
+          font-size: $font_size_medium;
+        }
       }
     }
   }

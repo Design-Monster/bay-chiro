@@ -1,25 +1,91 @@
 
 <Dynamic::Ui::Navigation::Skip-Link />
 <div local-class="visit_page">
-  <header local-class="visit_page_header_container">
-    <Dynamic::Ui::Header />
-      {{#if (or (media 'isLarge') (media 'isWide'))}}
-      <nav local-class="visit_page_desktop_navigation_container">
-        <div local-class="visit_page_desktop_navigation">
-        <Dynamic::Ui::Navigation::Desktop 
-          @routeSlotOne={{this.welcomeRoute}} 
-          @routeSlotTwo={{this.servicesRoute}}
-          @routeSlotThree={{this.visitRoute}} 
-          @routeSlotFour={{this.aboutRoute}} />
-        </div>
-      </nav>
-      {{/if}}
+  <header local-class="visit_page_header">
+    <div local-class="visit_page_logo_container">
+      <Dynamic::Ui::Navigation::Logo />
+    </div>
+    {{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+    <nav local-class="visit_page_desktop_navigation_container">
+      <Dynamic::Ui::Navigation::Desktop 
+        @routeSlotOne={{this.welcomeRoute}} 
+        @routeSlotTwo={{this.servicesRoute}}
+        @routeSlotThree={{this.visitRoute}} 
+        @routeSlotFour={{this.aboutRoute}} />
+    </nav>
+    {{/if}}
   </header>
   <div local-class="visit_page_body">
     <main local-class="visit_page_content_container">
-      <div local-class="visit_page_content">
-        This is the content section! What does this look like?
-      </div>
+			<span local-class="visit_page_image_container">
+				<span local-class="visit_page_image">
+					<picture>
+					{{#if (media 'isSmall')}}
+						<source 
+							srcset='/assets/images/building.png'
+							loading="eager"
+							alt={{@visitPageImageOneAltLabel}}
+							type="image/webp">
+						<img
+							src='/assets/images/building.png'
+							loading="eager"
+							alt={{@visitPageImageOneAltLabel}}>
+					{{/if}}
+					{{#if (media 'isMedium')}}
+						<source
+							srcset='/assets/images/building.png'
+							loading="eager"
+							alt={{@visitPageImageOneAltLabel}}
+							type="image/webp">
+						<img
+							src='/assets/images/building.png'
+							loading="eager"
+							alt={{@visitPageImageOneAltLabel}}>
+					{{/if}}
+					{{#if (media 'isLarge')}}
+						<source
+							srcset='/assets/images/building.png'
+							loading="eager" 
+							alt={{@visitPageImageOneAltLabel}}
+							type="image/webp">
+						<img
+							src='/assets/images/building.png'
+							loading="eager"
+							alt={{@visitPageImageOneAltLabel}}>
+					{{/if}}
+					{{#if (media 'isWide')}}
+						<source
+							srcset='/assets/images/building.png'
+							loading="eager"
+							alt={{@visitPageImageOneAltLabel}}
+							type="image/webp">
+						<img
+							src='/assets/images/building.png'
+							loading="eager"
+							alt={{@visitPageImageOneAltLabel}}>
+					{{/if}}
+					</picture>
+				</span> 
+			</span>
+			<div local-class="visit_page_information_container">
+				<div local-class="visit_page_heading">
+					<h1>Get in touch!</h1>
+				</div>
+				<div local-class="visit_page_copy">
+					<p>147 Park Street Unit C<br />
+					Rockland, ME 04841<br />
+					207-596-6700<br />
+					info@baychiro.net</p>
+				</div>
+					<div local-class="visit_page_heading">
+						<h2>Hours of Operation:</h2>
+					</div>
+				<div local-class="visit_page_copy">
+					<p>Monday - Friday: 8:00am - 5:00pm<br />
+					Closed daily between 12:00pm - 2:00pm<br />
+					Closed on weekends and every other Friday</p>
+				</div>
+			</div>
     </main>
   </div>
   <footer local-class="visit_page_footer_container">
@@ -27,16 +93,14 @@
     <Dynamic::Ui::Footer />
     {{/if}}
   </footer>
-  {{#if (or (media 'isSmall') (media 'isMedium'))}}
+  {{#if (media 'isSmall')}}
   {{!-- template-lint-disable no-duplicate-landmark-elements --}}
   <nav local-class="visit_page_mobile_navigation_container">
-    <div local-class="visit_page_mobile_navigation">
-      <Dynamic::Ui::Navigation::Mobile 
-        @routeSlotOne={{this.welcomeRoute}} 
-        @routeSlotTwo={{this.servicesRoute}}
-        @routeSlotThree={{this.visitRoute}} 
-        @routeSlotFour={{this.aboutRoute}} />
-    </div>
+    <Dynamic::Ui::Navigation::Mobile 
+      @routeSlotOne={{this.welcomeRoute}} 
+      @routeSlotTwo={{this.servicesRoute}}
+      @routeSlotThree={{this.visitRoute}} 
+      @routeSlotFour={{this.aboutRoute}} />
   </nav>
   {{/if}}
 </div>
