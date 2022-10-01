@@ -1,26 +1,94 @@
 
 <Dynamic::Ui::Navigation::Skip-Link />
 <div local-class="index_page">
-  <header local-class="index_page_header_container">
-    <Dynamic::Ui::Header />
-      {{#if (or (media 'isLarge') (media 'isWide'))}}
-      <nav local-class="index_page_desktop_navigation_container">
-        <div local-class="index_page_desktop_navigation">
-        <Dynamic::Ui::Navigation::Desktop 
-          @routeSlotOne={{this.welcomeRoute}} 
-          @routeSlotTwo={{this.servicesRoute}}
-          @routeSlotThree={{this.visitRoute}} 
-          @routeSlotFour={{this.aboutRoute}} />
-        </div>
-      </nav>
-      {{/if}}
+  <header local-class="index_page_header">
+    <div local-class="index_page_logo_container">
+      <Dynamic::Ui::Navigation::Logo />
+    </div>
+    {{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+    <nav local-class="index_page_desktop_navigation_container">
+      <Dynamic::Ui::Navigation::Desktop 
+        @routeSlotOne={{this.welcomeRoute}} 
+        @routeSlotTwo={{this.servicesRoute}}
+        @routeSlotThree={{this.visitRoute}} 
+        @routeSlotFour={{this.aboutRoute}} />
+    </nav>
+    {{/if}}
   </header>
   <div local-class="index_page_body">
     <main local-class="index_page_content_container">
-      <div local-class="index_page_content">
-        <p>Dr. Blaine Curtis started Bay Chiropractic Center at the corner Park Street and Main Street in Rockland in May of 1996. Our goal has always been to provide complete, cutting edge chiropractic care in a comfortable and friendly office setting. We work in conjunction with medical physicians and physical therapists in the Midcoast area and with specialists throughout Maine to create the most comprehensive health treatment plans so that we can provide you with the best care available.</p>
-        <p>In addition to chiropractic adjustments, we offer a variety of therapies for treating pain and soft tissue damage in the office including, ultrasound, interferential, microcurrent, TENS, Kinesiotape, cold laser, and Radial Pulse Wave. We specialize in sports injuries and optimizing performance throughout training and competition.</p>
-        <p></p>
+      <span local-class="index_page_image_container">
+        <span local-class="index_page_image">
+          <picture>
+          {{#if (media 'isSmall')}}
+            <source 
+              srcset='/assets/images/building.png'
+              loading="eager"
+              alt={{@indexPageImageOneAltLabel}}
+              type="image/webp">
+            <img
+              src='/assets/images/building.png'
+              loading="eager"
+              alt={{@indexPageImageOneAltLabel}}>
+          {{/if}}
+          {{#if (media 'isMedium')}}
+            <source
+              srcset='/assets/images/building.png'
+              loading="eager"
+              alt={{@indexPageImageOneAltLabel}}
+              type="image/webp">
+            <img
+              src='/assets/images/building.png'
+              loading="eager"
+              alt={{@indexPageImageOneAltLabel}}>
+          {{/if}}
+          {{#if (media 'isLarge')}}
+            <source
+              srcset='/assets/images/building.png'
+              loading="eager" 
+              alt={{@indexPageImageOneAltLabel}}
+              type="image/webp">
+            <img
+              src='/assets/images/building.png'
+              loading="eager"
+              alt={{@indexPageImageOneAltLabel}}>
+          {{/if}}
+          {{#if (media 'isWide')}}
+            <source
+              srcset='/assets/images/building.png'
+              loading="eager"
+              alt={{@indexPageImageOneAltLabel}}
+              type="image/webp">
+            <img
+              src='/assets/images/building.png'
+              loading="eager"
+              alt={{@indexPageImageOneAltLabel}}>
+          {{/if}}
+          </picture>
+        </span> 
+      </span>
+      <div local-class="index_page_information_container">
+        <div local-class="index_page_heading">
+          <h1>Welcome to Bay Chiropractic Center!</h1>
+        </div>
+        <div local-class="index_page_copy">
+          <p>Since 1996, Bay Chiropractic Center has been serving Midcoast Maine by offering complete, cutting edge chiropractic care in a comfortable and friendly office setting.</p>
+          <p>We offer a variety of therapies for treating pain and soft tissue damage including, ultrasound, interferential, microcurrent, TENS, Kinesiotape, cold laser, and Radial Pulse Wave.</p>
+          <p>We are no longer contracted with any health insurance networks. All patients will be self-pay at time of service. We will provide the necessary paperwork, upon request, so that you may submit the claim to your insurance company. We will continue to bill MEDICARE on your behalf if you have a Traditional plan NOT a resold or replacement plan such as Medicare Advantage. Call us if you are unsure what you have.</p>
+        </div>
+        <div local-class="services_page_heading">
+          <h2>Our Fees:</h2>
+        </div>
+        <div local-class="index_page_copy">
+          <ul>
+            <li>Chiropractic Adjustments are $36</li>
+            <li>New patient Examinations are $110 to $200</li>
+            <li>Re-examinations are $60 to $85</li>
+            <li>Medicare Adjustments are $36 or $50</li>
+            <li>Ultrasound, Interferential Stimulation, and Laser is $15 per session</li>
+            <li>Radial Pulse Wave or Shockwave is $30 per session</li>
+          </ul>
+        </div>
       </div>
     </main>
   </div>
@@ -29,16 +97,14 @@
     <Dynamic::Ui::Footer />
     {{/if}}
   </footer>
-  {{#if (or (media 'isSmall') (media 'isMedium'))}}
+  {{#if (media 'isSmall')}}
   {{!-- template-lint-disable no-duplicate-landmark-elements --}}
   <nav local-class="index_page_mobile_navigation_container">
-    <div local-class="index_page_mobile_navigation">
-      <Dynamic::Ui::Navigation::Mobile 
-        @routeSlotOne={{this.welcomeRoute}} 
-        @routeSlotTwo={{this.servicesRoute}}
-        @routeSlotThree={{this.visitRoute}} 
-        @routeSlotFour={{this.aboutRoute}} />
-    </div>
+    <Dynamic::Ui::Navigation::Mobile 
+      @routeSlotOne={{this.welcomeRoute}} 
+      @routeSlotTwo={{this.servicesRoute}}
+      @routeSlotThree={{this.visitRoute}} 
+      @routeSlotFour={{this.aboutRoute}} />
   </nav>
   {{/if}}
 </div>

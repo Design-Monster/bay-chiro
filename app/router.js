@@ -10,4 +10,5 @@ Router.map(function () {
   this.route('services', function () {});
   this.route('visit', function () {});
   this.route('about', function () {});
+  this.route('wrong-url', { path: '/*' }, function () {});
 });

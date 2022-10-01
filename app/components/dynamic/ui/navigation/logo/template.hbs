@@ -1,0 +1,50 @@
+<div local-class="logo">
+  <LinkTo @route='index' aria-label="Bay Chiro's banner - click to go to home page" local-class="{{unless @indexPage "hover_pointer"}}">
+    <picture>
+    {{#if (media 'isSmall')}}
+      <source 
+        srcset='/assets/images/logo-small.png'
+        loading="eager"
+        alt={{@indexPageImageOneAltLabel}}
+        type="image/webp">
+      <img
+        src='/assets/images/logo-small.png'
+        loading="eager"
+        alt={{@indexPageImageOneAltLabel}}>
+    {{/if}}
+    {{#if (media 'isMedium')}}
+      <source
+        srcset='/assets/images/logo-small.png'
+        loading="eager"
+        alt={{@indexPageImageOneAltLabel}}
+        type="image/webp">
+      <img
+        src='/assets/images/logo-small.png'
+        loading="eager"
+        alt={{@indexPageImageOneAltLabel}}>
+    {{/if}}
+    {{#if (media 'isLarge')}}
+      <source
+        srcset='/assets/images/logo-large.png'
+        loading="eager" 
+        alt={{@indexPageImageOneAltLabel}}
+        type="image/webp">
+      <img
+        src='/assets/images/logo-large.png'
+        loading="eager"
+        alt={{@indexPageImageOneAltLabel}}>
+    {{/if}}
+    {{#if (media 'isWide')}}
+      <source
+        srcset='/assets/images/logo-large.png'
+        loading="eager"
+        alt={{@indexPageImageOneAltLabel}}
+        type="image/webp">
+      <img
+        src='/assets/images/logo-large.png'
+        loading="eager"
+        alt={{@indexPageImageOneAltLabel}}>
+    {{/if}}
+    </picture>
+  </LinkTo>
+</div>

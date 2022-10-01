@@ -1,25 +1,98 @@
 
 <Dynamic::Ui::Navigation::Skip-Link />
 <div local-class="services_page">
-  <header local-class="services_page_header_container">
-    <Dynamic::Ui::Header />
-      {{#if (or (media 'isLarge') (media 'isWide'))}}
-      <nav local-class="services_page_desktop_navigation_container">
-        <div local-class="services_page_desktop_navigation">
-        <Dynamic::Ui::Navigation::Desktop 
-          @routeSlotOne={{this.welcomeRoute}} 
-          @routeSlotTwo={{this.servicesRoute}}
-          @routeSlotThree={{this.visitRoute}} 
-          @routeSlotFour={{this.aboutRoute}} />
-        </div>
-      </nav>
-      {{/if}}
+  <header local-class="services_page_header">
+    <div local-class="services_page_logo_container">
+      <Dynamic::Ui::Navigation::Logo />
+    </div>
+    {{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+    <nav local-class="services_page_desktop_navigation_container">
+      <Dynamic::Ui::Navigation::Desktop 
+        @routeSlotOne={{this.welcomeRoute}} 
+        @routeSlotTwo={{this.servicesRoute}}
+        @routeSlotThree={{this.visitRoute}} 
+        @routeSlotFour={{this.aboutRoute}} />
+    </nav>
+    {{/if}}
   </header>
   <div local-class="services_page_body">
     <main local-class="services_page_content_container">
-      <div local-class="services_page_content">
-        This is the content section! What does this look like?
-      </div>
+
+        <span local-class="services_page_image_container">
+          <span local-class="services_page_image">
+            <picture>
+            {{#if (media 'isSmall')}}
+              <source 
+                srcset='/assets/images/building.png'
+                loading="eager"
+                alt={{@servicesPageImageOneAltLabel}}
+                type="image/webp">
+              <img
+                src='/assets/images/building.png'
+                loading="eager"
+                alt={{@servicesPageImageOneAltLabel}}>
+            {{/if}}
+            {{#if (media 'isMedium')}}
+              <source
+                srcset='/assets/images/building.png'
+                loading="eager"
+                alt={{@servicesPageImageOneAltLabel}}
+                type="image/webp">
+              <img
+                src='/assets/images/building.png'
+                loading="eager"
+                alt={{@servicesPageImageOneAltLabel}}>
+            {{/if}}
+            {{#if (media 'isLarge')}}
+              <source
+                srcset='/assets/images/building.png'
+                loading="eager" 
+                alt={{@servicesPageImageOneAltLabel}}
+                type="image/webp">
+              <img
+                src='/assets/images/building.png'
+                loading="eager"
+                alt={{@servicesPageImageOneAltLabel}}>
+            {{/if}}
+            {{#if (media 'isWide')}}
+              <source
+                srcset='/assets/images/building.png'
+                loading="eager"
+                alt={{@servicesPageImageOneAltLabel}}
+                type="image/webp">
+              <img
+                src='/assets/images/building.png'
+                loading="eager"
+                alt={{@servicesPageImageOneAltLabel}}>
+            {{/if}}
+            </picture>
+          </span> 
+        </span>
+        <div local-class="services_page_information_container">
+          <div local-class="services_page_heading">
+            <h1>Chiropractic Medicine</h1>
+          </div>
+          <div local-class="services_page_copy">
+            <p>Chiropractic is a health care science based upon the relationship between the skeletal system and the nervous system. Positional changes or fixations in the joints can irritate or compress nerves or the spinal cord and cause problems along the nerve pathway. These can happen through trauma, accidents, falls, sports injuries, repetitive motions, or often just a simple wrong movement.</p>
+            <p>This typically leads to a breakdown of the normal biomechanics of the muscles, tendons and joints and ultimately causes pain, swelling or nerve symptoms like numbness, tingling and weakness. Chiropractic is the art and science of detecting, diagnosing and correcting these problems.</p>
+          </div>
+          <div local-class="services_page_heading">
+            <h2>Services:</h2>
+          </div>
+          <div local-class="services_page_copy">
+            <ul>
+              <li>Hands-on adjustments</li>
+              <li>Ultrasound</li>
+              <li>TENS</li>
+              <li>Interferential Stimulation</li>
+              <li>Microcurrent</li>
+              <li>Cold Laser</li>
+              <li>Kinesio tape</li>
+              <li>Radial pulse wave</li>
+              <li>More!</li>
+            </ul>
+          </div>
+        </div>
     </main>
   </div>
   <footer local-class="services_page_footer_container">
@@ -27,16 +100,14 @@
     <Dynamic::Ui::Footer />
     {{/if}}
   </footer>
-  {{#if (or (media 'isSmall') (media 'isMedium'))}}
+  {{#if (media 'isSmall')}}
   {{!-- template-lint-disable no-duplicate-landmark-elements --}}
   <nav local-class="services_page_mobile_navigation_container">
-    <div local-class="services_page_mobile_navigation">
-      <Dynamic::Ui::Navigation::Mobile 
-        @routeSlotOne={{this.welcomeRoute}} 
-        @routeSlotTwo={{this.servicesRoute}}
-        @routeSlotThree={{this.visitRoute}} 
-        @routeSlotFour={{this.aboutRoute}} />
-    </div>
+    <Dynamic::Ui::Navigation::Mobile 
+      @routeSlotOne={{this.welcomeRoute}} 
+      @routeSlotTwo={{this.servicesRoute}}
+      @routeSlotThree={{this.visitRoute}} 
+      @routeSlotFour={{this.aboutRoute}} />
   </nav>
   {{/if}}
 </div>

@@ -1,47 +1,88 @@
 @import 'global/variables';
 @import 'global/breakpoints';
 
-.nav_menu_container {
-  display: flex;
+.nav_desktop {
+  display:  flex;
   flex: 1;
-  align-items: flex-end;
+  flex-direction: column;
 
-  .nav_item_container {
+  .nav_menu_container {
     display: flex;
-    height: $height_large;
-    min-height: $height_large;
     flex: 1;
-    align-items: center;
+    align-items: flex-end;
 
-    &:hover {
-      transform: scale(1.075);
-    }
-
-    .nav_link {
+    .nav_item_container {
       display: flex;
+      height: $height_large;
+      min-height: $height_large;
       flex: 1;
-      text-decoration: none;
+      background-color: $color_blue_primary;
+      border-radius: $border_radius_primary;
       align-items: center;
 
-      &:visited {
-        color: $font_color_primary;
+      &.spaced {
+        margin: 0 $margin_extra_small 0 0;
       }
 
-      &:global(.active) {
-        height: $height_large;
-        color: $font_color_primary;
-        background-color: $color_blue_secondary;
+      &:hover {
+        transform: scale(1.025);
+      }
+
+      .nav_link {
+        display: flex;
+        flex: 1;
+        text-decoration: none;
+        align-items: center;
+
+        &:visited {
+          color: $font_color_dark;
+        }
+
+        &:global(.active) {
+          height: $height_large;
+          color: $font_color_dark;
+          background-color: $color_blue_primary;
+          border-radius: $border_radius_primary;
+        }
+      }
+
+      .nav_item {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+
+        .nav_item_text {
+          padding: $padding_extra_small;
+          font-size: $font_size_regular;
+
+          @include breakpoint(large) {
+            font-size: $font_size_medium;
+          }
+
+          @include breakpoint(wide) {
+            font-size: $font_size_medium;
+          }
+        }
       }
     }
+  }
 
-    .nav_item {
-      display: flex;
-      flex: 1;
+  .nav_contact_container {
+    display: flex;
+    height: $height_medium;
+    max-height: $height_medium;
+    margin: $margin_extra_small 0 0;
+    line-height: 2.125; //3.125rem(the size of the container)-1em(the size of the text) - will set the text to the bottom of the container
 
-      .nav_item_text {
-        padding: 0 0 0 $margin_small;
-        font-size: $font_size_medium;
-      }
+    .nav_phone_number {
+      margin: 0 $margin_small 0 0;
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      max-height: 100%;
     }
   }
 }
