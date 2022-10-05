@@ -1,105 +1,106 @@
-
 <Dynamic::Ui::Navigation::Skip-Link />
 <div local-class="about_page">
   <header local-class="about_page_header">
     <div local-class="about_page_logo_container">
       <Dynamic::Ui::Navigation::Logo />
+      {{#if (media 'isSmall')}}
+      <address local-class="contact_container" aria-label="Our phone number">
+        <div local-class="phone_number">
+          Call us (207) 596-6700
+        </div>   
+      </address>
+      {{/if}}
     </div>
+    {{#if (media 'isSmall')}}
+    {{!-- template-lint-disable no-duplicate-landmark-elements --}}
+    <nav local-class="about_page_mobile_navigation_container">
+      <Dynamic::Ui::Navigation::Mobile 
+        @routeSlotOne={{this.welcomeRoute}} 
+        @routeSlotTwo={{this.servicesRoute}}
+        @routeSlotThree={{this.aboutRoute}} 
+        @routeSlotFour={{this.visitRoute}} />
+    </nav>
+    {{/if}}
     {{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
     <nav local-class="about_page_desktop_navigation_container">
       <Dynamic::Ui::Navigation::Desktop 
         @routeSlotOne={{this.welcomeRoute}} 
         @routeSlotTwo={{this.servicesRoute}}
-        @routeSlotThree={{this.visitRoute}} 
-        @routeSlotFour={{this.aboutRoute}} />
+        @routeSlotThree={{this.aboutRoute}} 
+        @routeSlotFour={{this.visitRoute}} />
+      <address local-class="contact_container" aria-label="Our phone number and email">
+        <div local-class="phone_number">
+          Call us (207) 596-6700
+        </div>   
+      </address>
     </nav>
     {{/if}}
   </header>
   <div local-class="about_page_body">
     <main local-class="about_page_content_container">
-
-        <span local-class="about_page_image_container">
-          <span local-class="about_page_image">
-            <picture>
-            {{#if (media 'isSmall')}}
-              <source 
-                srcset='/assets/images/building.png'
-                loading="eager"
-                alt={{@aboutPageImageOneAltLabel}}
-                type="image/webp">
-              <img
-                src='/assets/images/building.png'
-                loading="eager"
-                alt={{@aboutPageImageOneAltLabel}}>
-            {{/if}}
-            {{#if (media 'isMedium')}}
-              <source
-                srcset='/assets/images/building.png'
-                loading="eager"
-                alt={{@aboutPageImageOneAltLabel}}
-                type="image/webp">
-              <img
-                src='/assets/images/building.png'
-                loading="eager"
-                alt={{@aboutPageImageOneAltLabel}}>
-            {{/if}}
-            {{#if (media 'isLarge')}}
-              <source
-                srcset='/assets/images/building.png'
-                loading="eager" 
-                alt={{@aboutPageImageOneAltLabel}}
-                type="image/webp">
-              <img
-                src='/assets/images/building.png'
-                loading="eager"
-                alt={{@aboutPageImageOneAltLabel}}>
-            {{/if}}
-            {{#if (media 'isWide')}}
-              <source
-                srcset='/assets/images/building.png'
-                loading="eager"
-                alt={{@aboutPageImageOneAltLabel}}
-                type="image/webp">
-              <img
-                src='/assets/images/building.png'
-                loading="eager"
-                alt={{@aboutPageImageOneAltLabel}}>
-            {{/if}}
-            </picture>
-          </span> 
-        </span>
-
-        <div local-class="about_page_information_container">
-
-          <div local-class="about_page_heading">
-            <h1>DR. Blaine Curtis</h1>
-          </div>
-
-          <div local-class="about_page_copy">
+      <span local-class="about_page_image_container">
+        <picture>
+        {{#if (media 'isSmall')}}
+          <source 
+            srcset='/assets/images/image4small.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image4small.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        {{#if (media 'isMedium')}}
+          <source
+            srcset='/assets/images/image5.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image5.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        {{#if (media 'isLarge')}}
+          <source
+            srcset='/assets/images/image5.png'
+            loading="eager" 
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image5.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        {{#if (media 'isWide')}}
+          <source
+            srcset='/assets/images/image5.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image5.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        </picture>
+      </span>
+      <div local-class="about_page_information_container">
+        <div local-class="about_page_copy">
+            <h1><b>Dr. Blaine Curtis</b></h1>
             <p>Dr. Blaine Curtis started Bay Chiropractic Center at the corner Park Street and Main Street in Rockland in May of 1996. Our goal has always been to provide complete, cutting edge chiropractic care in a comfortable and friendly office setting. We work in conjunction with medical physicians and physical therapists in the Midcoast area and with specialists throughout Maine to create the most comprehensive health treatment plans so that we can provide you with the best care available.</p>
             <p>In addition to chiropractic adjustments, we offer a variety of therapies for treating pain and soft tissue damage in the office including, ultrasound, interferential, microcurrent, TENS, Kinesiotape, cold laser, and Radial Pulse Wave. We specialize in sports injuries and optimizing performance throughout training and competition.</p>
-          </div>
-
-          <div local-class="about_page_copy">
-            COPY - BULLET
-          </div>
         </div>
-
+        <div local-class="about_page_copy">
+            <h1><b>Monica</b></h1>
+            <p>Dr. Blaine Curtis started Bay Chiropractic Center at the corner Park Street and Main Street in Rockland in May of 1996. Our goal has always been to provide complete, cutting edge chiropractic care in a comfortable and friendly office setting. We work in conjunction with medical physicians and physical therapists in the Midcoast area and with specialists throughout Maine to create the most comprehensive health treatment plans so that we can provide you with the best care available.</p>
+            <p>In addition to chiropractic adjustments, we offer a variety of therapies for treating pain and soft tissue damage in the office including, ultrasound, interferential, microcurrent, TENS, Kinesiotape, cold laser, and Radial Pulse Wave. We specialize in sports injuries and optimizing performance throughout training and competition.</p>
+        </div>
+        <footer local-class="about_page_footer_container">
+          <Dynamic::Ui::Footer />
+        </footer>
+      </div>
     </main>
   </div>
-  <footer local-class="about_page_footer_container">
-    {{#if (or (media 'isLarge') (media 'isWide'))}}
-    <Dynamic::Ui::Footer />
-    {{/if}}
-  </footer>
-  {{#if (media 'isSmall')}}
-  {{!-- template-lint-disable no-duplicate-landmark-elements --}}
-  <nav local-class="about_page_mobile_navigation_container">
-    <Dynamic::Ui::Navigation::Mobile 
-      @routeSlotOne={{this.welcomeRoute}} 
-      @routeSlotTwo={{this.servicesRoute}}
-      @routeSlotThree={{this.visitRoute}} 
-      @routeSlotFour={{this.aboutRoute}} />
-  </nav>
-  {{/if}}
 </div>

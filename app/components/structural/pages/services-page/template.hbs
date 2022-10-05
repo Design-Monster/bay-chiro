@@ -1,113 +1,154 @@
-
 <Dynamic::Ui::Navigation::Skip-Link />
 <div local-class="services_page">
   <header local-class="services_page_header">
     <div local-class="services_page_logo_container">
       <Dynamic::Ui::Navigation::Logo />
+      {{#if (media 'isSmall')}}
+      <address local-class="contact_container" aria-label="Our phone number">
+        <div local-class="phone_number">
+          Call us (207) 596-6700
+        </div>   
+      </address>
+      {{/if}}
     </div>
+    {{#if (media 'isSmall')}}
+    {{!-- template-lint-disable no-duplicate-landmark-elements --}}
+    <nav local-class="services_page_mobile_navigation_container">
+      <Dynamic::Ui::Navigation::Mobile 
+        @routeSlotOne={{this.welcomeRoute}} 
+        @routeSlotTwo={{this.servicesRoute}}
+        @routeSlotThree={{this.aboutRoute}} 
+        @routeSlotFour={{this.visitRoute}} />
+    </nav>
+    {{/if}}
     {{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
     <nav local-class="services_page_desktop_navigation_container">
       <Dynamic::Ui::Navigation::Desktop 
         @routeSlotOne={{this.welcomeRoute}} 
         @routeSlotTwo={{this.servicesRoute}}
-        @routeSlotThree={{this.visitRoute}} 
-        @routeSlotFour={{this.aboutRoute}} />
+        @routeSlotThree={{this.aboutRoute}} 
+        @routeSlotFour={{this.visitRoute}} />
+      <address local-class="contact_container" aria-label="Our phone number and email">
+        <div local-class="phone_number">
+          Call us (207) 596-6700
+        </div>   
+      </address>
     </nav>
     {{/if}}
   </header>
   <div local-class="services_page_body">
     <main local-class="services_page_content_container">
-
-        <span local-class="services_page_image_container">
-          <span local-class="services_page_image">
-            <picture>
-            {{#if (media 'isSmall')}}
-              <source 
-                srcset='/assets/images/building.png'
-                loading="eager"
-                alt={{@servicesPageImageOneAltLabel}}
-                type="image/webp">
-              <img
-                src='/assets/images/building.png'
-                loading="eager"
-                alt={{@servicesPageImageOneAltLabel}}>
-            {{/if}}
-            {{#if (media 'isMedium')}}
-              <source
-                srcset='/assets/images/building.png'
-                loading="eager"
-                alt={{@servicesPageImageOneAltLabel}}
-                type="image/webp">
-              <img
-                src='/assets/images/building.png'
-                loading="eager"
-                alt={{@servicesPageImageOneAltLabel}}>
-            {{/if}}
-            {{#if (media 'isLarge')}}
-              <source
-                srcset='/assets/images/building.png'
-                loading="eager" 
-                alt={{@servicesPageImageOneAltLabel}}
-                type="image/webp">
-              <img
-                src='/assets/images/building.png'
-                loading="eager"
-                alt={{@servicesPageImageOneAltLabel}}>
-            {{/if}}
-            {{#if (media 'isWide')}}
-              <source
-                srcset='/assets/images/building.png'
-                loading="eager"
-                alt={{@servicesPageImageOneAltLabel}}
-                type="image/webp">
-              <img
-                src='/assets/images/building.png'
-                loading="eager"
-                alt={{@servicesPageImageOneAltLabel}}>
-            {{/if}}
-            </picture>
-          </span> 
-        </span>
-        <div local-class="services_page_information_container">
-          <div local-class="services_page_heading">
-            <h1>Chiropractic Medicine</h1>
-          </div>
-          <div local-class="services_page_copy">
+      <span local-class="services_page_image_container">
+        <picture>
+        {{#if (media 'isSmall')}}
+          <source 
+            srcset='/assets/images/image4small.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image4small.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        {{#if (media 'isMedium')}}
+          <source
+            srcset='/assets/images/image2.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image2.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        {{#if (media 'isLarge')}}
+          <source
+            srcset='/assets/images/image2.png'
+            loading="eager" 
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image2.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        {{#if (media 'isWide')}}
+          <source
+            srcset='/assets/images/image2.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image2.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        </picture>
+      </span>
+      <div local-class="services_page_information_container">
+        <div local-class="services_page_copy">
+            <h1><b>Chiropractic Medicine</b></h1>
             <p>Chiropractic is a health care science based upon the relationship between the skeletal system and the nervous system. Positional changes or fixations in the joints can irritate or compress nerves or the spinal cord and cause problems along the nerve pathway. These can happen through trauma, accidents, falls, sports injuries, repetitive motions, or often just a simple wrong movement.</p>
             <p>This typically leads to a breakdown of the normal biomechanics of the muscles, tendons and joints and ultimately causes pain, swelling or nerve symptoms like numbness, tingling and weakness. Chiropractic is the art and science of detecting, diagnosing and correcting these problems.</p>
-          </div>
-          <div local-class="services_page_heading">
-            <h2>Services:</h2>
-          </div>
-          <div local-class="services_page_copy">
-            <ul>
-              <li>Hands-on adjustments</li>
-              <li>Ultrasound</li>
-              <li>TENS</li>
-              <li>Interferential Stimulation</li>
-              <li>Microcurrent</li>
-              <li>Cold Laser</li>
-              <li>Kinesio tape</li>
-              <li>Radial pulse wave</li>
-              <li>More!</li>
-            </ul>
+        </div>
+        <div local-class="services_page_copy">
+          <h2><b>Our Services</b></h2>
+          <div local-class="services_page_table">
+            <div local-class="services_page_table_section">
+              <div local-class="services_page_table_cell_header gapped_cell">
+                <span>Service</span>
+              </div>
+              <div local-class="services_page_table_cell_header">
+                <span>Description</span>
+              </div>
+            </div>
+            <div local-class="services_page_table_section">
+              <div local-class="services_page_table_cell gapped_cell">
+                <span>Hands-on adjustment</span>
+              </div>
+              <div local-class="services_page_table_cell">
+                <span>A hands-on adjustment occurs when a chiropractor applies short, quick force to the joints in order to correct a misalignment, increase range of motion, or release pressure on nerves.</span>
+              </div>
+            </div>
+            <div local-class="services_page_table_section">
+              <div local-class="services_page_table_cell gapped_cell">
+                <span>Ultrasound</span>
+              </div>
+              <div local-class="services_page_table_cell">
+                <span>Ultrasound therapy is a non-invasive, generally painless treatment that is typically administered by a physical therapist or an occupational therapist. It has been FDA approved to help treat a variety of pain conditions.</span>
+              </div>
+            </div>
+            <div local-class="services_page_table_section">
+              <div local-class="services_page_table_cell gapped_cell">
+                <span>TENS</span>
+              </div>
+              <div local-class="services_page_table_cell">
+                <span>Transcutaneous electrical nerve stimulation (TENS) is a method of pain relief involving the use of a mild electrical current. A TENS machine is a small, battery-operated device that has leads connected to sticky pads called electrodes.</span>
+              </div>
+            </div>
+            <div local-class="services_page_table_section">
+              <div local-class="services_page_table_cell gapped_cell">
+                <span>Anything else that should be on here?</span>
+              </div>
+              <div local-class="services_page_table_cell">
+                <span>Anything else that should be on here?</span>
+              </div>
+            </div>
+            <div local-class="services_page_table_section">
+              <div local-class="services_page_table_cell gapped_cell">
+                <span>Anything else that should be on here?</span>
+              </div>
+              <div local-class="services_page_table_cell">
+                <span>Anything else that should be on here?</span>
+              </div>
+            </div>
           </div>
         </div>
+        <footer local-class="services_page_footer_container">
+          <Dynamic::Ui::Footer />
+        </footer>
+      </div>
     </main>
   </div>
-  <footer local-class="services_page_footer_container">
-    {{#if (or (media 'isLarge') (media 'isWide'))}}
-    <Dynamic::Ui::Footer />
-    {{/if}}
-  </footer>
-  {{#if (media 'isSmall')}}
-  {{!-- template-lint-disable no-duplicate-landmark-elements --}}
-  <nav local-class="services_page_mobile_navigation_container">
-    <Dynamic::Ui::Navigation::Mobile 
-      @routeSlotOne={{this.welcomeRoute}} 
-      @routeSlotTwo={{this.servicesRoute}}
-      @routeSlotThree={{this.visitRoute}} 
-      @routeSlotFour={{this.aboutRoute}} />
-  </nav>
-  {{/if}}
 </div>

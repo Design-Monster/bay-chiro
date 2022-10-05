@@ -16,7 +16,7 @@
       height: $height_large;
       min-height: $height_large;
       flex: 1;
-      background-color: $color_blue_primary;
+      background-color: $color_blue_secondary;
       border-radius: $border_radius_primary;
       align-items: center;
 
@@ -35,12 +35,12 @@
         align-items: center;
 
         &:visited {
-          color: $font_color_dark;
+          color: $font_color_dark_blue;
         }
 
         &:global(.active) {
           height: $height_large;
-          color: $font_color_dark;
+          color: $font_color_dark_blue;
           background-color: $color_blue_primary;
           border-radius: $border_radius_primary;
         }
@@ -64,25 +64,6 @@
           }
         }
       }
-    }
-  }
-
-  .nav_contact_container {
-    display: flex;
-    height: $height_medium;
-    max-height: $height_medium;
-    margin: $margin_extra_small 0 0;
-    line-height: 2.125; //3.125rem(the size of the container)-1em(the size of the text) - will set the text to the bottom of the container
-
-    .nav_phone_number {
-      margin: 0 $margin_small 0 0;
-    }
-
-    img {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      max-height: 100%;
     }
   }
 }

@@ -1,106 +1,232 @@
-
 <Dynamic::Ui::Navigation::Skip-Link />
 <div local-class="visit_page">
   <header local-class="visit_page_header">
     <div local-class="visit_page_logo_container">
       <Dynamic::Ui::Navigation::Logo />
+      {{#if (media 'isSmall')}}
+      <address local-class="contact_container" aria-label="Our phone number">
+        <div local-class="phone_number">
+          Call us (207) 596-6700
+        </div>   
+      </address>
+      {{/if}}
     </div>
+    {{#if (media 'isSmall')}}
+    {{!-- template-lint-disable no-duplicate-landmark-elements --}}
+    <nav local-class="visit_page_mobile_navigation_container">
+      <Dynamic::Ui::Navigation::Mobile 
+        @routeSlotOne={{this.welcomeRoute}} 
+        @routeSlotTwo={{this.servicesRoute}}
+        @routeSlotThree={{this.aboutRoute}} 
+        @routeSlotFour={{this.visitRoute}} />
+    </nav>
+    {{/if}}
     {{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
     <nav local-class="visit_page_desktop_navigation_container">
       <Dynamic::Ui::Navigation::Desktop 
         @routeSlotOne={{this.welcomeRoute}} 
         @routeSlotTwo={{this.servicesRoute}}
-        @routeSlotThree={{this.visitRoute}} 
-        @routeSlotFour={{this.aboutRoute}} />
+        @routeSlotThree={{this.aboutRoute}} 
+        @routeSlotFour={{this.visitRoute}} />
+      <address local-class="contact_container" aria-label="Our phone number and email">
+        <div local-class="phone_number">
+          Call us (207) 596-6700
+        </div>   
+      </address>
     </nav>
     {{/if}}
   </header>
   <div local-class="visit_page_body">
     <main local-class="visit_page_content_container">
-			<span local-class="visit_page_image_container">
-				<span local-class="visit_page_image">
-					<picture>
-					{{#if (media 'isSmall')}}
-						<source 
-							srcset='/assets/images/building.png'
-							loading="eager"
-							alt={{@visitPageImageOneAltLabel}}
-							type="image/webp">
-						<img
-							src='/assets/images/building.png'
-							loading="eager"
-							alt={{@visitPageImageOneAltLabel}}>
-					{{/if}}
-					{{#if (media 'isMedium')}}
-						<source
-							srcset='/assets/images/building.png'
-							loading="eager"
-							alt={{@visitPageImageOneAltLabel}}
-							type="image/webp">
-						<img
-							src='/assets/images/building.png'
-							loading="eager"
-							alt={{@visitPageImageOneAltLabel}}>
-					{{/if}}
-					{{#if (media 'isLarge')}}
-						<source
-							srcset='/assets/images/building.png'
-							loading="eager" 
-							alt={{@visitPageImageOneAltLabel}}
-							type="image/webp">
-						<img
-							src='/assets/images/building.png'
-							loading="eager"
-							alt={{@visitPageImageOneAltLabel}}>
-					{{/if}}
-					{{#if (media 'isWide')}}
-						<source
-							srcset='/assets/images/building.png'
-							loading="eager"
-							alt={{@visitPageImageOneAltLabel}}
-							type="image/webp">
-						<img
-							src='/assets/images/building.png'
-							loading="eager"
-							alt={{@visitPageImageOneAltLabel}}>
-					{{/if}}
-					</picture>
-				</span> 
-			</span>
-			<div local-class="visit_page_information_container">
-				<div local-class="visit_page_heading">
-					<h1>Get in touch!</h1>
-				</div>
-				<div local-class="visit_page_copy">
-					<p>147 Park Street Unit C<br />
-					Rockland, ME 04841<br />
-					207-596-6700<br />
-					info@baychiro.net</p>
-				</div>
-					<div local-class="visit_page_heading">
-						<h2>Hours of Operation:</h2>
+      <span local-class="visit_page_image_container">
+        <picture>
+        {{#if (media 'isSmall')}}
+          <source 
+            srcset='/assets/images/image4small.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image4small.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        {{#if (media 'isMedium')}}
+          <source
+            srcset='/assets/images/image6.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image6.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        {{#if (media 'isLarge')}}
+          <source
+            srcset='/assets/images/image6.png'
+            loading="eager" 
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image6.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        {{#if (media 'isWide')}}
+          <source
+            srcset='/assets/images/image6.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image6.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        </picture>
+      </span>
+      <div local-class="visit_page_information_container">
+        <div local-class="visit_page_copy">
+            <h1><b>Get in touch</b></h1>
+						<p>Call or email</p>
+            <p>(207) 596-6700</p>
+						<p>info@bbaychiro.net</p>
+						<h2>Hours of operation</h2>
+						<p>We are open Monday through Friday, 8am - 5pm and closed 12 noon - 2pm.</p>
+						<p><b>We are closed every other Friday.</b></p>
+					<div local-class="visit_page_table">
+            <div local-class="visit_page_table_section">
+              <div local-class="visit_page_table_cell_header middle_cell">
+								{{#if (media 'isSmall')}}
+                <span>M</span>
+								{{/if}}
+    						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+                <span>Monday</span>
+								{{/if}}
+              </div>
+              <div local-class="visit_page_table_cell_header middle_cell">
+								{{#if (media 'isSmall')}}
+                <span>T</span>
+								{{/if}}
+    						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+                <span>Tuesday</span>
+								{{/if}}              
+								</div>
+              <div local-class="visit_page_table_cell_header middle_cell">
+                {{#if (media 'isSmall')}}
+                <span>W</span>
+								{{/if}}
+    						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+                <span>Wednesday</span>
+								{{/if}} 
+              </div>
+							<div local-class="visit_page_table_cell_header middle_cell">
+								{{#if (media 'isSmall')}}
+                <span>T</span>
+								{{/if}}
+    						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+                <span>Thursday</span>
+								{{/if}} 
+              </div>
+              <div local-class="visit_page_table_cell_header">
+								{{#if (media 'isSmall')}}
+                <span>F</span>
+								{{/if}}
+    						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+                <span>Friday</span>
+								{{/if}} 
+              </div>
+            </div>
+            <div local-class="visit_page_table_section">
+              <div local-class="visit_page_table_cell middle_cell">
+								{{#if (media 'isSmall')}}
+                <span>8 - 12</span>
+								{{/if}}
+    						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+                <span>8 am - 12 noon</span>
+								{{/if}} 
+              </div>
+              <div local-class="visit_page_table_cell middle_cell">
+								{{#if (media 'isSmall')}}
+                <span>8 - 12</span>
+								{{/if}}
+    						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+                <span>8 am - 12 noon</span>
+								{{/if}}
+              </div>
+              <div local-class="visit_page_table_cell middle_cell">
+								{{#if (media 'isSmall')}}
+                <span>8 - 12</span>
+								{{/if}}
+    						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+                <span>8 am - 12 noon</span>
+								{{/if}}
+              </div>
+							<div local-class="visit_page_table_cell middle_cell">
+                <span>closed</span>
+              </div>
+              <div local-class="visit_page_table_cell">
+								{{#if (media 'isSmall')}}
+                <span>8 - 12</span>
+								{{/if}}
+    						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+                <span>8 am - 12 noon</span>
+								{{/if}}
+              </div>
+            </div>
+            <div local-class="visit_page_table_section">
+              <div local-class="visit_page_table_cell middle_cell">
+								{{#if (media 'isSmall')}}
+                <span>2 - 5</span>
+								{{/if}}
+    						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+                <span>2 pm - 5 pm</span>
+								{{/if}}
+              </div>
+              <div local-class="visit_page_table_cell middle_cell">
+								{{#if (media 'isSmall')}}
+                <span>2 - 5</span>
+								{{/if}}
+    						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+                <span>2 pm - 5 pm</span>
+								{{/if}}
+              </div>
+              <div local-class="visit_page_table_cell middle_cell">
+								{{#if (media 'isSmall')}}
+                <span>2 - 5</span>
+								{{/if}}
+    						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+                <span>2 pm - 5 pm</span>
+								{{/if}}
+              </div>
+							<div local-class="visit_page_table_cell middle_cell">
+                {{#if (media 'isSmall')}}
+                <span>1 - 6</span>
+								{{/if}}
+    						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+                <span>1 pm - 6 pm</span>
+								{{/if}}
+              </div>
+              <div local-class="visit_page_table_cell">
+								{{#if (media 'isSmall')}}
+                <span>2 - 5</span>
+								{{/if}}
+    						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+                <span>2 pm - 5 pm</span>
+								{{/if}}
+              </div>
+            </div>
 					</div>
-				<div local-class="visit_page_copy">
-					<p>Monday - Friday: 8:00am - 5:00pm<br />
-					Closed daily between 12:00pm - 2:00pm<br />
-					Closed on weekends and every other Friday</p>
-				</div>
-			</div>
+					<h3><b>Location & Parking</b></h3>
+					<p>147 Park Street, Unit C<br />
+					Rockland, ME 04841</p>
+					<p>We are located on US Rt.1 (Park St.) right next to Park Street Car Wash. Parking available next to the building.</p>
+        </div>
+        <footer local-class="visit_page_footer_container">
+          <Dynamic::Ui::Footer />
+        </footer>
+      </div>
     </main>
   </div>
-  <footer local-class="visit_page_footer_container">
-    {{#if (or (media 'isLarge') (media 'isWide'))}}
-    <Dynamic::Ui::Footer />
-    {{/if}}
-  </footer>
-  {{#if (media 'isSmall')}}
-  {{!-- template-lint-disable no-duplicate-landmark-elements --}}
-  <nav local-class="visit_page_mobile_navigation_container">
-    <Dynamic::Ui::Navigation::Mobile 
-      @routeSlotOne={{this.welcomeRoute}} 
-      @routeSlotTwo={{this.servicesRoute}}
-      @routeSlotThree={{this.visitRoute}} 
-      @routeSlotFour={{this.aboutRoute}} />
-  </nav>
-  {{/if}}
 </div>

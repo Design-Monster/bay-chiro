@@ -1,110 +1,175 @@
-
 <Dynamic::Ui::Navigation::Skip-Link />
 <div local-class="index_page">
   <header local-class="index_page_header">
     <div local-class="index_page_logo_container">
       <Dynamic::Ui::Navigation::Logo />
+      {{#if (media 'isSmall')}}
+      <address local-class="contact_container" aria-label="Our phone number">
+        <div local-class="phone_number">
+          Call us (207) 596-6700
+        </div>   
+      </address>
+      {{/if}}
     </div>
+    {{#if (media 'isSmall')}}
+    {{!-- template-lint-disable no-duplicate-landmark-elements --}}
+    <nav local-class="index_page_mobile_navigation_container">
+      <Dynamic::Ui::Navigation::Mobile 
+        @routeSlotOne={{this.welcomeRoute}} 
+        @routeSlotTwo={{this.servicesRoute}}
+        @routeSlotThree={{this.aboutRoute}} 
+        @routeSlotFour={{this.visitRoute}} />
+    </nav>
+    {{/if}}
     {{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
     <nav local-class="index_page_desktop_navigation_container">
       <Dynamic::Ui::Navigation::Desktop 
         @routeSlotOne={{this.welcomeRoute}} 
         @routeSlotTwo={{this.servicesRoute}}
-        @routeSlotThree={{this.visitRoute}} 
-        @routeSlotFour={{this.aboutRoute}} />
+        @routeSlotThree={{this.aboutRoute}} 
+        @routeSlotFour={{this.visitRoute}} />
+      <address local-class="contact_container" aria-label="Our phone number and email">
+        <div local-class="phone_number">
+          Call us (207) 596-6700
+        </div>   
+      </address>
     </nav>
     {{/if}}
   </header>
   <div local-class="index_page_body">
     <main local-class="index_page_content_container">
       <span local-class="index_page_image_container">
-        <span local-class="index_page_image">
-          <picture>
-          {{#if (media 'isSmall')}}
-            <source 
-              srcset='/assets/images/building.png'
-              loading="eager"
-              alt={{@indexPageImageOneAltLabel}}
-              type="image/webp">
-            <img
-              src='/assets/images/building.png'
-              loading="eager"
-              alt={{@indexPageImageOneAltLabel}}>
-          {{/if}}
-          {{#if (media 'isMedium')}}
-            <source
-              srcset='/assets/images/building.png'
-              loading="eager"
-              alt={{@indexPageImageOneAltLabel}}
-              type="image/webp">
-            <img
-              src='/assets/images/building.png'
-              loading="eager"
-              alt={{@indexPageImageOneAltLabel}}>
-          {{/if}}
-          {{#if (media 'isLarge')}}
-            <source
-              srcset='/assets/images/building.png'
-              loading="eager" 
-              alt={{@indexPageImageOneAltLabel}}
-              type="image/webp">
-            <img
-              src='/assets/images/building.png'
-              loading="eager"
-              alt={{@indexPageImageOneAltLabel}}>
-          {{/if}}
-          {{#if (media 'isWide')}}
-            <source
-              srcset='/assets/images/building.png'
-              loading="eager"
-              alt={{@indexPageImageOneAltLabel}}
-              type="image/webp">
-            <img
-              src='/assets/images/building.png'
-              loading="eager"
-              alt={{@indexPageImageOneAltLabel}}>
-          {{/if}}
-          </picture>
-        </span> 
+        <picture>
+        {{#if (media 'isSmall')}}
+          <source 
+            srcset='/assets/images/image4small.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image4small.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        {{#if (media 'isMedium')}}
+          <source
+            srcset='/assets/images/image3.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image3.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        {{#if (media 'isLarge')}}
+          <source
+            srcset='/assets/images/image3.png'
+            loading="eager" 
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image3.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        {{#if (media 'isWide')}}
+          <source
+            srcset='/assets/images/image3.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image3.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        </picture>
       </span>
       <div local-class="index_page_information_container">
-        <div local-class="index_page_heading">
-          <h1>Welcome to Bay Chiropractic Center!</h1>
+        <div local-class="index_page_copy">
+          <h1><b>Welcome to Bay Chiropractic Center!</b></h1>
+          <p>Dr. Curtis started Bay Chiropractic Center in 1996 and continues serving Midcoast Maine by offering complete, cutting edge chiropractic care in a comfortable and friendly office setting.</p>
+          <p><b>New patients</b> | <a href="https://www.mychirotouch.com/patientintake/?clientid=BCCP0013" target="_blank" rel="noopener noreferrer" aria-label="New Patient Forms">Click here to fill out new patient forms</a></p>
+          <p><b>Services provided</b> | Chiropractic adjustments with a variety of therapies for treating pain and soft tissue damage in the office including: ultrasound, interferential, microcurrent, TENS, Kinesiotape, cold laser, and Radial Pulse Wave. We specialize in sports injuries and optimizing performance throughout training and competition.</p>
+          <p><b>Health insurance</b> | We are no longer contracted with any health insurance networks. All patients will be self-pay at time of service. We will provide the necessary paperwork, upon request, so that you may submit the claim to your insurance company.</p>
+          <p><b>Medicare patients</b> | We will continue to bill MEDICARE on your behalf if you have a Traditional plan NOT a resold or replacement plan such as Medicare Advantage. Call us if you are unsure which you have.</p>
         </div>
         <div local-class="index_page_copy">
-          <p>Since 1996, Bay Chiropractic Center has been serving Midcoast Maine by offering complete, cutting edge chiropractic care in a comfortable and friendly office setting.</p>
-          <p>We offer a variety of therapies for treating pain and soft tissue damage including, ultrasound, interferential, microcurrent, TENS, Kinesiotape, cold laser, and Radial Pulse Wave.</p>
-          <p>We are no longer contracted with any health insurance networks. All patients will be self-pay at time of service. We will provide the necessary paperwork, upon request, so that you may submit the claim to your insurance company. We will continue to bill MEDICARE on your behalf if you have a Traditional plan NOT a resold or replacement plan such as Medicare Advantage. Call us if you are unsure what you have.</p>
+          <h2><b>Our Fees</b></h2>
+          <div local-class="index_page_table">
+            <div local-class="index_page_table_section">
+              <div local-class="index_page_table_cell_header">
+                <span>Service</span>
+              </div>
+              <div local-class="index_page_table_cell_header middle_cell">
+                <span>Cost</span>
+              </div>
+              <div local-class="index_page_table_cell_header">
+                <span>Maximum cost</span>
+              </div>
+            </div>
+            <div local-class="index_page_table_section">
+              <div local-class="index_page_table_cell">
+                <span>New patient examination</span>
+              </div>
+              <div local-class="index_page_table_cell middle_cell">
+                <span>$110</span>
+              </div>
+              <div local-class="index_page_table_cell">
+                <span>$200</span>
+              </div>
+            </div>
+            <div local-class="index_page_table_section">
+              <div local-class="index_page_table_cell">
+                <span>Chiropractic Adjustment</span>
+              </div>
+              <div local-class="index_page_table_cell middle_cell">
+                <span>$36</span>
+              </div>
+              <div local-class="index_page_table_cell">
+                <span>$50 (medicare only)</span>
+              </div>
+            </div>
+            <div local-class="index_page_table_section">
+              <div local-class="index_page_table_cell">
+                <span>Re-examinations</span>
+              </div>
+              <div local-class="index_page_table_cell middle_cell">
+                <span>$60</span>
+              </div>
+              <div local-class="index_page_table_cell">
+                <span>$85</span>
+              </div>
+            </div>
+            <div local-class="index_page_table_section">
+              <div local-class="index_page_table_cell">
+                <span>Ultrasound, interferential stimulation, cold laser</span>
+              </div>
+              <div local-class="index_page_table_cell middle_cell">
+                <span>$15</span>
+              </div>
+              <div local-class="index_page_table_cell">
+                <span>$15</span>
+              </div>
+            </div>
+            <div local-class="index_page_table_section">
+              <div local-class="index_page_table_cell">
+                <span>Radial Pulse Wave (Shockwave therapy)</span>
+              </div>
+              <div local-class="index_page_table_cell middle_cell">
+                <span>$30</span>
+              </div>
+              <div local-class="index_page_table_cell">
+                <span>$30</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div local-class="services_page_heading">
-          <h2>Our Fees:</h2>
-        </div>
-        <div local-class="index_page_copy">
-          <ul>
-            <li>Chiropractic Adjustments are $36</li>
-            <li>New patient Examinations are $110 to $200</li>
-            <li>Re-examinations are $60 to $85</li>
-            <li>Medicare Adjustments are $36 or $50</li>
-            <li>Ultrasound, Interferential Stimulation, and Laser is $15 per session</li>
-            <li>Radial Pulse Wave or Shockwave is $30 per session</li>
-          </ul>
-        </div>
+        <footer local-class="index_page_footer_container">
+          <Dynamic::Ui::Footer />
+        </footer>
       </div>
     </main>
   </div>
-  <footer local-class="index_page_footer_container">
-    {{#if (or (media 'isLarge') (media 'isWide'))}}
-    <Dynamic::Ui::Footer />
-    {{/if}}
-  </footer>
-  {{#if (media 'isSmall')}}
-  {{!-- template-lint-disable no-duplicate-landmark-elements --}}
-  <nav local-class="index_page_mobile_navigation_container">
-    <Dynamic::Ui::Navigation::Mobile 
-      @routeSlotOne={{this.welcomeRoute}} 
-      @routeSlotTwo={{this.servicesRoute}}
-      @routeSlotThree={{this.visitRoute}} 
-      @routeSlotFour={{this.aboutRoute}} />
-  </nav>
-  {{/if}}
 </div>
