@@ -1,40 +1,103 @@
 <Dynamic::Ui::Navigation::Skip-Link />
 <div local-class="wrong_url_page">
-  {{#if (or (media 'isSmall') (media 'isMedium'))}}
-  <nav local-class="wrong_url_page_mobile_navigation_container">
-    <Dynamic::Ui::Navigation::Mobile 
-      @routeSlotOne={{this.aboutUsRoute}} 
-      @routeSlotTwo={{this.productsRoute}}
-      @routeSlotThree={{this.whereToBuyRoute}} 
-      @routeSlotFour={{this.processRoute}} />
-  </nav>
-  {{else if (or (media 'isLarge') (media 'isWide'))}}
-  {{!-- template-lint-disable no-duplicate-landmark-elements --}}
-  <nav local-class="wrong_url_page_desktop_navigation_container">
-    <Dynamic::Ui::Navigation::Desktop
-      @avatarImage={{this.avatarImage}}
-      @routeSlotOne={{this.aboutUsRoute}} 
-      @routeSlotTwo={{this.productsRoute}} 
-      @routeSlotThree={{this.whereToBuyRoute}}
-      @routeSlotFour={{this.processRoute}} />
-  </nav>
-  {{/if}}
-  <div local-class="wrong_url_page_body_container">
-    {{#if (or (media 'isLarge') (media 'isWide'))}}
-    <div local-class="wrong_url_page_header_container">
-      <Dynamic::Ui::Header 
-        @headerNameFirst={{this.headerNameFirst}} 
-        @headerNameLast={{this.headerNameLast}}
-        @headerTitle={{this.headerTitle}} />
+  <header local-class="wrong_url_page_header">
+    <div local-class="wrong_url_page_logo_container">
+      <Dynamic::Ui::Navigation::Logo />
+      {{#if (media 'isSmall')}}
+      <address local-class="contact_container" aria-label="Our phone number">
+        <div local-class="phone_number">
+          Call us (207) 596-6700
+        </div>   
+      </address>
+      {{/if}}
     </div>
+    {{#if (media 'isSmall')}}
+    {{!-- template-lint-disable no-duplicate-landmark-elements --}}
+    <nav local-class="wrong_url_page_mobile_navigation_container">
+      <Dynamic::Ui::Navigation::Mobile 
+        @routeSlotOne={{this.welcomeRoute}} 
+        @routeSlotTwo={{this.servicesRoute}}
+        @routeSlotThree={{this.aboutRoute}} 
+        @routeSlotFour={{this.visitRoute}} />
+    </nav>
     {{/if}}
-    <div local-class="wrong_url_page_content_container">
-      <div local-class="wrong_url_page_content_header">
-        <h1>This is the Content</h1>
+    {{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
+    <nav local-class="wrong_url_page_desktop_navigation_container">
+      <Dynamic::Ui::Navigation::Desktop 
+        @routeSlotOne={{this.welcomeRoute}} 
+        @routeSlotTwo={{this.servicesRoute}}
+        @routeSlotThree={{this.aboutRoute}} 
+        @routeSlotFour={{this.visitRoute}} />
+      <address local-class="contact_container" aria-label="Our phone number and email">
+        <div local-class="phone_number">
+          Call us (207) 596-6700
+        </div>   
+      </address>
+    </nav>
+    {{/if}}
+  </header>
+  <div local-class="wrong_url_page_body">
+    <main local-class="wrong_url_page_content_container">
+      <span local-class="wrong_url_page_image_container">
+        <picture>
+        {{#if (media 'isSmall')}}
+          <source 
+            srcset='/assets/images/image4small.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image4small.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        {{#if (media 'isMedium')}}
+          <source
+            srcset='/assets/images/image3.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image3.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        {{#if (media 'isLarge')}}
+          <source
+            srcset='/assets/images/image3.png'
+            loading="eager" 
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image3.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        {{#if (media 'isWide')}}
+          <source
+            srcset='/assets/images/image3.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}
+            type="image/webp">
+          <img
+            src='/assets/images/image3.png'
+            loading="eager"
+            alt={{@indexPageImageOneAltLabel}}>
+        {{/if}}
+        </picture>
+      </span>
+      <div local-class="wrong_url_page_information_container">
+        <div local-class="wrong_url_page_copy">
+            <h1><b>Wrong URL?</b></h1>
+            <p>ERROR</p>
+        </div>
+        <div local-class="wrong_url_page_copy">
+          
+        </div>
+        <footer local-class="wrong_url_page_footer_container">
+          <Dynamic::Ui::Footer />
+        </footer>
       </div>
-      <div local-class="wrong_url_page_content">
-        <Dynamic::Error />
-      </div>
-    </div>
+    </main>
   </div>
 </div>

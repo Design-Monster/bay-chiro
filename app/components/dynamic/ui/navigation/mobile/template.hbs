@@ -1,23 +1,7 @@
 <div local-class="nav_mobile">
-  <address local-class="contact_container" aria-label="Our phone number and email">
-    <div local-class="phone_number">
-      (207) 596-6700
-    </div>
-    <picture>
-      <source 
-        srcset="/assets/images/email.webp"
-        loading="eager"
-        alt="Email Address"
-        type="image/webp">
-      <img
-        src="/assets/images/email.webp"
-        loading="eager"
-        alt="Email Address">
-    </picture>    
-  </address>
   <div local-class="nav_menu_container">
     {{#if @routeSlotOne}}
-    <div local-class="nav_item_container spaced">
+    <div local-class="nav_item_container">
       <LinkTo @route={{@routeSlotOne}} local-class="nav_link" aria-label="To Bay Chiro's home page">
         <div local-class="nav_item">
           <div local-class="nav_item_text">
@@ -28,7 +12,7 @@
     </div>
     {{/if}}
     {{#if @routeSlotTwo}}
-    <div local-class="nav_item_container spaced">
+    <div local-class="nav_item_container">
       <LinkTo @route={{@routeSlotTwo}} local-class="nav_link" aria-label="Learn about the services we offer">
         <div local-class="nav_item">
           <div local-class="nav_item_text">
@@ -39,22 +23,22 @@
     </div>
     {{/if}}
     {{#if @routeSlotThree}}
-    <div local-class="nav_item_container spaced">
+    <div local-class="nav_item_container">
       <LinkTo @route={{@routeSlotThree}} local-class="nav_link" aria-label="Where to find us">
         <div local-class="nav_item">
           <div local-class="nav_item_text">
-            Visit
+            About
           </div>
         </div>
       </LinkTo>
     </div>
     {{/if}}
     {{#if @routeSlotFour}}
-    <div local-class="nav_item_container">
+    <div local-class="nav_item_container end">
       <LinkTo @route={{@routeSlotFour}} local-class="nav_link" aria-label="About">
         <div local-class="nav_item">
           <div local-class="nav_item_text">
-            About
+            Visit
           </div>
         </div>
       </LinkTo>

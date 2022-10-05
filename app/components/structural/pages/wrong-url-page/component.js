@@ -1,12 +1,9 @@
 import Component from '@glimmer/component';
 
-export default class StructuralPagesWhereToBuyPageComponent extends Component {
-  avatarImage = '/assets/files/sfmlogo.png';
-  processRoute = 'process';
-  productsRoute = 'products';
-  whereToBuyRoute = 'where-to-buy';
-  aboutUsRoute = 'index';
-  headerNameFirst = 'Sleepy Forest';
-  headerNameLast = 'Maple';
-  headerTitle = "When 2nd Best Isn't Good Enough";
+export default class StructuralPagesWrongUrlPageComponent extends Component {
+  //routes for link-tos
+  welcomeRoute = 'index';
+  servicesRoute = 'services';
+  visitRoute = 'visit';
+  aboutRoute = 'about';
 }
