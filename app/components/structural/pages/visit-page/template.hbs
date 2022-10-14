@@ -3,13 +3,6 @@
   <header local-class="visit_page_header">
     <div local-class="visit_page_logo_container">
       <Dynamic::Ui::Navigation::Logo />
-      {{#if (media 'isSmall')}}
-      <address local-class="contact_container" aria-label="Our phone number">
-        <div local-class="phone_number">
-          Call us (207) 596-6700
-        </div>   
-      </address>
-      {{/if}}
     </div>
     {{#if (media 'isSmall')}}
     {{!-- template-lint-disable no-duplicate-landmark-elements --}}
@@ -44,45 +37,45 @@
           <source 
             srcset='/assets/images/image4small.png'
             loading="eager"
-            alt={{@indexPageImageOneAltLabel}}
+            alt="Google Map"
             type="image/webp">
           <img
             src='/assets/images/image4small.png'
             loading="eager"
-            alt={{@indexPageImageOneAltLabel}}>
+            alt="Google Map">
         {{/if}}
         {{#if (media 'isMedium')}}
           <source
             srcset='/assets/images/image6.png'
             loading="eager"
-            alt={{@indexPageImageOneAltLabel}}
+            alt="Google Map"
             type="image/webp">
           <img
             src='/assets/images/image6.png'
             loading="eager"
-            alt={{@indexPageImageOneAltLabel}}>
+            alt="Google Map">
         {{/if}}
         {{#if (media 'isLarge')}}
           <source
             srcset='/assets/images/image6.png'
             loading="eager" 
-            alt={{@indexPageImageOneAltLabel}}
+            alt="Google Map"
             type="image/webp">
           <img
             src='/assets/images/image6.png'
             loading="eager"
-            alt={{@indexPageImageOneAltLabel}}>
+            alt="Google Map">
         {{/if}}
         {{#if (media 'isWide')}}
           <source
             srcset='/assets/images/image6.png'
             loading="eager"
-            alt={{@indexPageImageOneAltLabel}}
+            alt="Google Map"
             type="image/webp">
           <img
             src='/assets/images/image6.png'
             loading="eager"
-            alt={{@indexPageImageOneAltLabel}}>
+            alt="Google Map">
         {{/if}}
         </picture>
       </span>
@@ -91,7 +84,7 @@
             <h1><b>Get in touch</b></h1>
 						<p>Call or email</p>
             <p>(207) 596-6700</p>
-						<p>info@bbaychiro.net</p>
+						<p>info@baychiro.net</p>
 						<h2>Hours of operation</h2>
 						<p>We are open Monday through Friday, 8am - 5pm and closed 12 noon - 2pm.</p>
 						<p><b>We are closed every other Friday.</b></p>
