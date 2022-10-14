@@ -227,6 +227,11 @@
                 background-color: $color_blue_secondary;
                 align-items: center;
                 justify-content: center;
+
+                &.gapped_cell {
+                  flex: 0 1 33%;
+                  margin: 0 1px 0 0;
+                }
               }
 
               .services_page_table_cell {
@@ -236,10 +241,11 @@
                 padding: $padding_extra_small;
                 background: $color_white;
                 align-items: center;
-              }
 
-              .gapped_cell {
-                margin: 0 1px;
+                &.gapped_cell {
+                  flex: 0 1 33%;
+                  margin: 0 1px 0 0;
+                }
               }
             }
           }
