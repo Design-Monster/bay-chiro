@@ -21,6 +21,10 @@
       border-radius: $border_radius_primary;
       align-items: center;
 
+      a {
+        color: $font_color_dark_blue;
+      }
+
       &.end {
         margin-right: $margin_extra_small;
       }
