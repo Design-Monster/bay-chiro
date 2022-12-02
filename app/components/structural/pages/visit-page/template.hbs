@@ -3,6 +3,13 @@
   <header local-class="visit_page_header">
     <div local-class="visit_page_logo_container">
       <Dynamic::Ui::Navigation::Logo />
+      {{#if (media 'isSmall')}}
+      <address local-class="contact_container" aria-label="Our phone number">
+        <div local-class="phone_number">
+          Call us (207) 596-6700
+        </div>   
+      </address>
+      {{/if}}
     </div>
     {{#if (media 'isSmall')}}
     {{!-- template-lint-disable no-duplicate-landmark-elements --}}
@@ -32,52 +39,7 @@
   <div local-class="visit_page_body">
     <main local-class="visit_page_content_container">
       <span local-class="visit_page_image_container">
-        <picture>
-        {{#if (media 'isSmall')}}
-          <source 
-            srcset='/assets/images/image4small.png'
-            loading="eager"
-            alt="Google Map"
-            type="image/webp">
-          <img
-            src='/assets/images/image4small.png'
-            loading="eager"
-            alt="Google Map">
-        {{/if}}
-        {{#if (media 'isMedium')}}
-          <source
-            srcset='/assets/images/image6.png'
-            loading="eager"
-            alt="Google Map"
-            type="image/webp">
-          <img
-            src='/assets/images/image6.png'
-            loading="eager"
-            alt="Google Map">
-        {{/if}}
-        {{#if (media 'isLarge')}}
-          <source
-            srcset='/assets/images/image6.png'
-            loading="eager" 
-            alt="Google Map"
-            type="image/webp">
-          <img
-            src='/assets/images/image6.png'
-            loading="eager"
-            alt="Google Map">
-        {{/if}}
-        {{#if (media 'isWide')}}
-          <source
-            srcset='/assets/images/image6.png'
-            loading="eager"
-            alt="Google Map"
-            type="image/webp">
-          <img
-            src='/assets/images/image6.png'
-            loading="eager"
-            alt="Google Map">
-        {{/if}}
-        </picture>
+        <iframe src="https://waze.com/iframe?zoom=15&lat=44.101824&lon=-69.119027&ct=livemap&pin=2&desc=1" width="100%" height="100%" allowfullscreen border-radius="0.33em" title="Map to Bay Chiropractic Center Location in Rockland Maine"></iframe>
       </span>
       <div local-class="visit_page_information_container">
         <div local-class="visit_page_copy">

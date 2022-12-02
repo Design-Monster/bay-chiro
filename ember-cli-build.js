@@ -7,6 +7,7 @@ module.exports = function (defaults) {
     sourcemaps: { enabled: true },
     prember: {
       urls: ['/', '/about', '/services', '/visit', '/wrong-url'],
+      // enabled: false,
     },
   });
 

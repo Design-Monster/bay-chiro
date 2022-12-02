@@ -1,0 +1,202 @@
+<span local-class="image_masonry_block">
+  <span local-class="image_masonry_block_image_block">
+    <span local-class="image_masonry_block_images_container a">
+      <span local-class="image_container">
+        <picture>
+        {{#if (media 'isSmall')}}
+          <source 
+            srcset={{@imageOneSmall}}
+            loading="eager"
+            alt={{@imageOneAltLabel}}
+            type="image/webp">
+          <img
+            src={{@imageOneSmallFallback}}
+            loading="eager"
+            alt={{@imageOneAltLabel}}>
+        {{/if}}
+        {{#if (media 'isMedium')}}
+          <source
+            srcset={{@imageOneMedium}}
+            loading="eager"
+            alt={{@imageOneAltLabel}}
+            type="image/webp">
+          <img
+            src={{@imageOneMediumFallback}}
+            loading="eager"
+            alt={{@imageOneAltLabel}}>
+        {{/if}}
+        {{#if (media 'isLarge')}}
+          <source
+            srcset={{@imageOneLarge}}
+            loading="eager" 
+            alt={{@imageOneAltLabel}}
+            type="image/webp">
+          <img
+            src={{@imageOneLargeFallback}}
+            loading="eager"
+            alt={{@imageOneAltLabel}}>
+        {{/if}}
+        {{#if (media 'isWide')}}
+          <source
+            srcset={{@imageOneWide}}
+            loading="eager"
+            alt={{@imageOneAltLabel}}
+            type="image/webp">
+          <img
+            src={{@imageOneWideFallback}}
+            loading="eager"
+            alt={{@imageOneAltLabel}}>
+        {{/if}}
+        </picture>
+      </span>
+    </span>
+    <span local-class="image_masonry_block_images_container b">
+      <span local-class="image_container">
+        <picture>
+        {{#if (media 'isSmall')}}
+          <source 
+            srcset={{@imageTwoSmall}}
+            loading="eager"
+            alt={{@imageTwoAltLabel}}
+            type="image/webp">
+          <img
+            src={{@imageTwoSmallFallback}}
+            loading="eager"
+            alt={{@imageTwoAltLabel}}>
+        {{/if}}
+        {{#if (media 'isMedium')}}
+          <source
+            srcset={{@imageTwoMedium}}
+            loading="eager"
+            alt={{@imageTwoAltLabel}}
+            type="image/webp">
+          <img
+            src={{@imageTwoMediumFallback}}
+            loading="eager"
+            alt={{@imageTwoAltLabel}}>
+        {{/if}}
+        {{#if (media 'isLarge')}}
+          <source
+            srcset={{@imageTwoLarge}}
+            loading="eager" 
+            alt={{@imageTwoAltLabel}}
+            type="image/webp">
+          <img
+            src={{@imageTwoLargeFallback}}
+            loading="eager"
+            alt={{@imageTwoAltLabel}}>
+        {{/if}}
+        {{#if (media 'isWide')}}
+          <source
+            srcset={{@imageTwoWide}}
+            loading="eager"
+            alt={{@imageTwoAltLabel}}
+            type="image/webp">
+          <img
+            src={{@imageTwoWideFallback}}
+            loading="eager"
+            alt={{@imageTwoAltLabel}}>
+        {{/if}}
+        </picture>
+      </span>
+    </span>
+    <span local-class="image_masonry_block_images_container c">
+      <span local-class="image_container">
+        <picture>
+        {{#if (media 'isSmall')}}
+          <source 
+            srcset={{@imageThreeSmall}}
+            loading="eager"
+            alt={{@imageThreeAltLabel}}
+            type="image/webp">
+          <img
+            src={{@imageThreeSmallFallback}}
+            loading="eager"
+            alt={{@imageThreeAltLabel}}>
+        {{/if}}
+        {{#if (media 'isMedium')}}
+          <source
+            srcset={{@imageThreeMedium}}
+            loading="eager"
+            alt={{@imageThreeAltLabel}}
+            type="image/webp">
+          <img
+            src={{@imageThreeMediumFallback}}
+            loading="eager"
+            alt={{@imageThreeAltLabel}}>
+        {{/if}}
+        {{#if (media 'isLarge')}}
+          <source
+            srcset={{@imageThreeLarge}}
+            loading="eager" 
+            alt={{@imageThreeAltLabel}}
+            type="image/webp">
+          <img
+            src={{@imageThreeLargeFallback}}
+            loading="eager"
+            alt={{@imageThreeAltLabel}}>
+        {{/if}}
+        {{#if (media 'isWide')}}
+          <source
+            srcset={{@imageThreeWide}}
+            loading="eager"
+            alt={{@imageThreeAltLabel}}
+            type="image/webp">
+          <img
+            src={{@imageThreeWideFallback}}
+            loading="eager"
+            alt={{@imageThreeAltLabel}}>
+        {{/if}}
+        </picture>
+      </span>
+      <span local-class="image_container">
+        <picture>
+        {{#if (media 'isSmall')}}
+          <source 
+            srcset={{@imageFourSmall}}
+            loading="eager"
+            alt={{@imageFourAltLabel}}
+            type="image/webp">
+          <img
+            src={{@imageFourSmallFallback}}
+            loading="eager"
+            alt={{@imageFourAltLabel}}>
+        {{/if}}
+        {{#if (media 'isMedium')}}
+          <source
+            srcset={{@imageFourMedium}}
+            loading="eager"
+            alt={{@imageFourAltLabel}}
+            type="image/webp">
+          <img
+            src={{@imageFourMediumFallback}}
+            loading="eager"
+            alt={{@imageFourAltLabel}}>
+        {{/if}}
+        {{#if (media 'isLarge')}}
+          <source
+            srcset={{@imageFourLarge}}
+            loading="eager" 
+            alt={{@imageFourAltLabel}}
+            type="image/webp">
+          <img
+            src={{@imageFourLargeFallback}}
+            loading="eager"
+            alt={{@imageFourAltLabel}}>
+        {{/if}}
+        {{#if (media 'isWide')}}
+          <source
+            srcset={{@imageFourWide}}
+            loading="eager"
+            alt={{@imageFourAltLabel}}
+            type="image/webp">
+          <img
+            src={{@imageFourWideFallback}}
+            loading="eager"
+            alt={{@imageFourAltLabel}}>
+        {{/if}}
+        </picture>
+      </span>
+    </span>
+  </span>
+</span>

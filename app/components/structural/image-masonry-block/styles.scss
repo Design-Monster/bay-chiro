@@ -1,0 +1,53 @@
+@import 'global/variables';
+@import 'global/breakpoints';
+
+.image_masonry_block {
+  display: flex;
+  flex-direction: column;
+
+  .image_masonry_block_image_block {
+    display: grid;
+    gap: $margin_small;
+    grid-gap: $margin_small;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: minmax(0, 200px) minmax(0, 175px) minmax(0, 175px);
+
+    .image_masonry_block_images_container {
+      display: grid;
+      gap: $margin_small;
+      grid-gap: $margin_small;
+
+      &.a {
+        grid-column: 1 / 3;
+        grid-row: 1;
+      }
+
+      &.b {
+        grid-column: 1;
+        grid-row: 2 / 4;
+      }
+
+      &.c {
+        grid-column: 2;
+        grid-row: 2 / 4;
+      }
+
+      .image_container {
+        display: flex;
+        min-height: 0;
+        overflow: hidden;
+        border-radius: $border_radius_primary;
+        align-items: center;
+        justify-content: center;
+
+        source, img {
+          width: 100%;
+          max-width: 100%;
+          height: auto;
+          max-height: 100%;
+          border-radius: $border_radius_primary;
+        }
+      }
+    }
+  }
+}

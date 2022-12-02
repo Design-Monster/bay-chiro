@@ -6,4 +6,5 @@ export default class StructuralPagesAboutPageComponent extends Component {
   servicesRoute = 'services';
   visitRoute = 'visit';
   aboutRoute = 'about';
+
 }

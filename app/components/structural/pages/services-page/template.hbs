@@ -39,52 +39,56 @@
   <div local-class="services_page_body">
     <main local-class="services_page_content_container">
       <span local-class="services_page_image_container">
-        <picture>
         {{#if (media 'isSmall')}}
+        <picture>
           <source 
-            srcset='/assets/images/image4small.png'
+            srcset="https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/0b857857-4a6e-42fd-1f26-862a5d365100/432x175"
             loading="eager"
-            alt="Chiropractic Adjustment Action Shot"
+            alt="Dr. Curtis cracking some's back!"
             type="image/webp">
           <img
-            src='/assets/images/image4small.png'
+            src="https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/0b857857-4a6e-42fd-1f26-862a5d365100/432x175"
             loading="eager"
-            alt="Chiropractic Adjustment Action Shot">
+            alt="Dr. Curtis cracking some's back!">
+        </picture>
         {{/if}}
         {{#if (media 'isMedium')}}
-          <source
-            srcset='/assets/images/image2.png'
+        <picture>
+          <source 
+            srcset='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/d51dcccf-8b01-416d-41a0-e24ad65d5300/932x175'
             loading="eager"
-            alt="Chiropractic Adjustment Action Shot"
+            alt="Dr. Curtis is cracking someone's back!"
             type="image/webp">
           <img
-            src='/assets/images/image2.png'
+            src='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/d51dcccf-8b01-416d-41a0-e24ad65d5300/932x175'
             loading="eager"
-            alt="Chiropractic Adjustment Action Shot">
-        {{/if}}
-        {{#if (media 'isLarge')}}
-          <source
-            srcset='/assets/images/image2.png'
-            loading="eager" 
-            alt="Chiropractic Adjustment Action Shot"
-            type="image/webp">
-          <img
-            src='/assets/images/image2.png'
-            loading="eager"
-            alt="Chiropractic Adjustment Action Shot">
-        {{/if}}
-        {{#if (media 'isWide')}}
-          <source
-            srcset='/assets/images/image2.png'
-            loading="eager"
-            alt="Chiropractic Adjustment Action Shot"
-            type="image/webp">
-          <img
-            src='/assets/images/image2.png'
-            loading="eager"
-            alt="Chiropractic Adjustment Action Shot">
-        {{/if}}
+            alt="Dr. Curtis cracking some's back!">
         </picture>
+        {{/if}}
+        {{#if (or (media 'isLarge') (media 'isWide'))}}
+        <Structural::ImageMasonryBlock
+          @imageOneLarge={{this.imageOneLarge}}
+          @imageOneLargeFallback={{this.imageOneLargeFallback}}
+          @imageOneWide={{this.imageOneWide}}
+          @imageOneWideFallback={{this.imageOneWideFallback}}
+          @imageOneAltLabel={{this.imageOneAltLabel}}
+          @imageTwoLarge={{this.imageTwoLarge}}
+          @imageTwoLargeFallback={{this.imageTwoLargeFallback}}
+          @imageTwoWide={{this.imageTwoWide}}
+          @imageTwoWideFallback={{this.imageTwoWideFallback}}
+          @imageTwoAltLabel={{this.imageTwoAltLabel}}
+          @imageThreeLarge={{this.imageThreeLarge}}
+          @imageThreeLargeFallback={{this.imageThreeLargeFallback}}
+          @imageThreeWide={{this.imageThreeWide}}
+          @imageThreeWideFallback={{this.imageThreeWideFallback}}
+          @imageThreeAltLabel={{this.imageThreeAltLabel}}
+          @imageFourLarge={{this.imageFourLarge}}
+          @imageFourLargeFallback={{this.imageFourLargeFallback}}
+          @imageFourWide={{this.imageFourWide}}
+          @imageFourWideFallback={{this.imageFourWideFallback}}
+          @imageFourAltLabel={{this.imageFourAltLabel}}
+        />
+        {{/if}}
       </span>
       <div local-class="services_page_information_container">
         <div local-class="services_page_copy">
@@ -116,31 +120,23 @@
                 <span>Ultrasound</span>
               </div>
               <div local-class="services_page_table_cell">
-                <span>Ultrasound therapy is a non-invasive, generally painless treatment that is typically administered by a physical therapist or an occupational therapist. It has been FDA approved to help treat a variety of pain conditions.</span>
+                <span>Ultrasound therapy is a non-invasive, generally painless treatment. It has been FDA approved to help treat a variety of pain conditions.</span>
               </div>
             </div>
             <div local-class="services_page_table_section">
               <div local-class="services_page_table_cell gapped_cell">
-                <span>TENS</span>
+                <span>Activator / Impulse adjuster</span>
               </div>
               <div local-class="services_page_table_cell">
-                <span>Transcutaneous electrical nerve stimulation (TENS) is a method of pain relief involving the use of a mild electrical current. A TENS machine is a small, battery-operated device that has leads connected to sticky pads called electrodes.</span>
+                <span>An impulse adjuster is a therapeutic tool used to adjust misalignments within the spine or around nerves and joints. </span>
               </div>
             </div>
             <div local-class="services_page_table_section">
               <div local-class="services_page_table_cell gapped_cell">
-                <span>Anything else that should be on here?</span>
+                <span>K-tape</span>
               </div>
               <div local-class="services_page_table_cell">
-                <span>Anything else that should be on here?</span>
-              </div>
-            </div>
-            <div local-class="services_page_table_section">
-              <div local-class="services_page_table_cell gapped_cell">
-                <span>Anything else that should be on here?</span>
-              </div>
-              <div local-class="services_page_table_cell">
-                <span>Anything else that should be on here?</span>
+                <span>KT Tape is designed to provide drug-free pain relief and flexible support to help keep you and your muscles active and recovering. If an active lifestyle is your priority, and pain, post-workout muscle soreness, or injury are constantly keeping you from your daily movement or goals, KT Tape is for you.</span>
               </div>
             </div>
           </div>
