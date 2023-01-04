@@ -3,16 +3,17 @@
 module.exports = function () {
   return {
     delivery: ['header'],
-    enabled: false, //true for production
+    enabled: true, //true for production
     failTests: true,
     policy: {
-      'connect-src': ["'self'"],
-      'default-src': ["'self'"],
-      'script-src': ["'self'"],
+      'connect-src': ['self'],
+      'default-src': ['self'],
+      'script-src': ['self'],
+      'frame-src': ['self', 'https://www.google.com', 'http://www.google.com'],
       'font-src': [
-        "'self'",
-        "'https://fonts.gstatic.com'",
-        "'http://fonts.gstatic.com'",
+        'self',
+        'https://fonts.gstatic.com',
+        'http://fonts.gstatic.com',
       ],
       'img-src': ["'self'"],
       'style-src': [
@@ -23,6 +24,6 @@ module.exports = function () {
       ],
       'media-src': null,
     },
-    reportOnly: true, //false for production
+    reportOnly: false, //false for production
   };
 };
