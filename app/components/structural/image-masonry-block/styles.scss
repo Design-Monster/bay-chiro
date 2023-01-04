@@ -10,7 +10,7 @@
     gap: $margin_small;
     grid-gap: $margin_small;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: minmax(0, 200px) minmax(0, 175px) minmax(0, 175px);
+    grid-template-rows: minmax(0, 200px) minmax(0, 200px) minmax(0, 200px);
 
     .image_masonry_block_images_container {
       display: grid;
@@ -41,8 +41,6 @@
         justify-content: center;
 
         source, img {
-          width: 100%;
-          max-width: 100%;
           height: auto;
           max-height: 100%;
           border-radius: $border_radius_primary;

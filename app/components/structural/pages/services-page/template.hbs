@@ -42,50 +42,42 @@
         {{#if (media 'isSmall')}}
         <picture>
           <source 
-            srcset="https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/0b857857-4a6e-42fd-1f26-862a5d365100/432x175"
+            srcset="https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/5a764029-e53d-4ac3-fae2-462d30913500/432x125"
             loading="eager"
-            alt="Dr. Curtis cracking some's back!"
+            alt="Chiropractor table."
             type="image/webp">
           <img
-            src="https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/0b857857-4a6e-42fd-1f26-862a5d365100/432x175"
+            src="https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/5a764029-e53d-4ac3-fae2-462d30913500/432x125"
             loading="eager"
-            alt="Dr. Curtis cracking some's back!">
+            alt="Chiropractor table.">
         </picture>
         {{/if}}
         {{#if (media 'isMedium')}}
         <picture>
           <source 
-            srcset='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/d51dcccf-8b01-416d-41a0-e24ad65d5300/932x175'
+            srcset='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/647f3aa0-72b1-4161-857d-b355ec6b9f00/932x125'
             loading="eager"
-            alt="Dr. Curtis is cracking someone's back!"
+            alt="Chiropractor table."
             type="image/webp">
           <img
-            src='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/d51dcccf-8b01-416d-41a0-e24ad65d5300/932x175'
+            src='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/647f3aa0-72b1-4161-857d-b355ec6b9f00/932x125'
             loading="eager"
-            alt="Dr. Curtis cracking some's back!">
+            alt="Chiropractor table.">
         </picture>
         {{/if}}
         {{#if (or (media 'isLarge') (media 'isWide'))}}
         <Structural::ImageMasonryBlock
-          @imageOneLarge={{this.imageOneLarge}}
-          @imageOneLargeFallback={{this.imageOneLargeFallback}}
-          @imageOneWide={{this.imageOneWide}}
-          @imageOneWideFallback={{this.imageOneWideFallback}}
+          @imageOne={{this.imageOne}}
+          @imageOneFallback={{this.imageOneFallback}}
           @imageOneAltLabel={{this.imageOneAltLabel}}
-          @imageTwoLarge={{this.imageTwoLarge}}
-          @imageTwoLargeFallback={{this.imageTwoLargeFallback}}
-          @imageTwoWide={{this.imageTwoWide}}
-          @imageTwoWideFallback={{this.imageTwoWideFallback}}
+          @imageTwo={{this.imageTwo}}
+          @imageTwoFallback={{this.imageTwoFallback}}
           @imageTwoAltLabel={{this.imageTwoAltLabel}}
-          @imageThreeLarge={{this.imageThreeLarge}}
-          @imageThreeLargeFallback={{this.imageThreeLargeFallback}}
-          @imageThreeWide={{this.imageThreeWide}}
-          @imageThreeWideFallback={{this.imageThreeWideFallback}}
+          @imageThree={{this.imageThree}}
+          @imageThreeFallback={{this.imageThreeFallback}}
           @imageThreeAltLabel={{this.imageThreeAltLabel}}
-          @imageFourLarge={{this.imageFourLarge}}
-          @imageFourLargeFallback={{this.imageFourLargeFallback}}
-          @imageFourWide={{this.imageFourWide}}
-          @imageFourWideFallback={{this.imageFourWideFallback}}
+          @imageFour={{this.imageFour}}
+          @imageFourFallback={{this.imageFourFallback}}
           @imageFourAltLabel={{this.imageFourAltLabel}}
         />
         {{/if}}
@@ -112,7 +104,7 @@
                 <span>Hands-on adjustment</span>
               </div>
               <div local-class="services_page_table_cell">
-                <span>A hands-on adjustment occurs when a chiropractor applies short, quick force to the joints in order to correct a misalignment, increase range of motion, or release pressure on nerves.</span>
+                <span>A hands-on adjustment occurs when a chiropractor applies short, quick force to the joints in order to correct a misalignment, increase range of motion, or release pressure on nerves. Main techniques include Diversified/HVLA, Thompson drop technique and Cox flexion/distraction.</span>
               </div>
             </div>
             <div local-class="services_page_table_section">
@@ -128,15 +120,23 @@
                 <span>Activator / Impulse adjuster</span>
               </div>
               <div local-class="services_page_table_cell">
-                <span>An impulse adjuster is a therapeutic tool used to adjust misalignments within the spine or around nerves and joints. </span>
+                <span>For those who prefer a lighter touch we utilize the Activator, a hand held tool that imparts a much lighter input to the joints. An impulse adjuster is a step between an Activator and hands-on adjusting allowing us to use many light taps to move the joint instead of a single movement.</span>
               </div>
             </div>
             <div local-class="services_page_table_section">
               <div local-class="services_page_table_cell gapped_cell">
-                <span>K-tape</span>
+                <span>KT Tape</span>
               </div>
               <div local-class="services_page_table_cell">
                 <span>KT Tape is designed to provide drug-free pain relief and flexible support to help keep you and your muscles active and recovering. If an active lifestyle is your priority, and pain, post-workout muscle soreness, or injury are constantly keeping you from your daily movement or goals, KT Tape is for you.</span>
+              </div>
+            </div>
+            <div local-class="services_page_table_section">
+              <div local-class="services_page_table_cell gapped_cell">
+                <span>Radial Pressure Wave</span>
+              </div>
+              <div local-class="services_page_table_cell">
+                <span>Radial Pressure Wave or RPW is another FDA approved therapeutic modality used to treat tendinopathies, bursitis, fasciitis, trigger points and chronic muscular strains. RPW or Shockwave, as it is also known, is widely used by physical therapists, chiropractors veterinarians, podiatrists, and is the same non-invasive treatment used by urologists to break up kidney stones.</span>
               </div>
             </div>
           </div>

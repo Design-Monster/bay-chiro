@@ -34,7 +34,6 @@
       flex-direction: column;
       margin: $margin_extra_small 0 0;
       align-items: center;
-      justify-content: center;
 
       .contact_container {
         display: flex;
@@ -92,20 +91,20 @@
     margin: calc($height_xxl + $margin_medium + $margin_extra_small + $margin_small) 0 $margin_large;
 
     @include breakpoint(medium) {
-      height: calc(100vh - calc($height_xxl + $margin_medium + $margin_extra_small + $margin_small)); //height of: header, padding, footer, margin-top, margin-bottom of about_page_body
+      height: calc(100vh - calc($height_xxl + $padding_extra_small + $margin_large + $height_xl + $margin_large)); //height of: header, footer, margin-top, margin-bottom of visit_page_body
       flex-direction: row;
     }
 
     @include breakpoint(large) {
-      height: calc(100vh - calc($height_xxl + $margin_medium + $margin_extra_small + $margin_small)); //height of: header, padding, footer, margin-top, margin-bottom of about_page_body
+      height: calc(100vh - calc($height_xxl + $padding_extra_small + $margin_large + $height_xl + $margin_large)); //height of: header, footer, margin-top, margin-bottom of visit_page_body
       flex-direction: row;
-      margin: calc($height_xxl + $margin_large) 0 $margin_large;
+      margin: calc($height_xl + $margin_large) 0 $margin_large;
     }
 
     @include breakpoint(wide) {
-      height: calc(100vh - calc($height_xxl + $margin_medium + $margin_extra_small + $margin_small)); //height of: header, footer, margin-top, margin-bottom of about_page_body
+      height: calc(100vh - calc($height_xxl + $padding_extra_small + $margin_large + $height_xl + $margin_large)); //height of: header, footer, margin-top, margin-bottom of visit_page_body
       flex-direction: row;
-      margin: calc($height_xxl + $margin_large) 0 $margin_large;
+      margin: calc($height_xl + $margin_large) 0 $margin_large;
     }
 
     .about_page_content_container {
@@ -118,105 +117,90 @@
       border-radius: $border_radius_primary;
 
       @include breakpoint(large) {
-        margin: 0 $margin_medium;
-        -webkit-mask-image: linear-gradient(180deg, $color_black 95%, transparent); //sass-lint:disable-line no-vendor-prefixes
-        mask-image: linear-gradient(180deg, $color_black 95%, transparent); 
+        flex-direction: row;
+        margin: $margin_medium;
       }
   
       @include breakpoint(wide) {
-        margin: 0 $margin_medium;
-        -webkit-mask-image: linear-gradient(180deg, $color_black 95%, transparent); //sass-lint:disable-line no-vendor-prefixes
-        mask-image: linear-gradient(180deg, $color_black 95%, transparent);
+        flex-direction: row;
+        margin: $margin_medium;
       }
 
-      .about_page_profile_container {
+      .about_page_image_container {
         display: flex;
+        height: 125px;
+        min-height: 125px;
+        max-height: 125px;
         flex: 1;
-        flex-direction: column;
-        margin: 0 0 $margin_small;
-        overflow: auto;
-        background-color: $color_white;
+        margin: 0 0 $margin_medium;
+        background-clip: border-box;
+        border-radius: $border_radius_primary;
+        align-items: center;      
+        justify-content: center;
+        -webkit-mask-image: -webkit-radial-gradient($color_white, $color_black); //sass-lint:disable-line function-name-format,no-vendor-prefixes
+        mask-image: -webkit-radial-gradient($color_white, $color_black); //sass-lint:disable-line function-name-format,no-vendor-prefixes
 
         @include breakpoint(large) {
-          flex-direction: row;
+          height: 100%;
+          min-height: 0;
+          max-height: 100%;
+          margin: 0 $margin_small $margin_extra_small 0;
         }
     
         @include breakpoint(wide) {
-          flex-direction: row;
+          height: 100%;
+          min-height: 0;
+          max-height: 100%;
+          margin: 0 $margin_small $margin_extra_small 0;
         }
 
-        .about_page_image_container {
-          display: flex;
-          height: 175px;
-          min-height: 0;
-          max-height: 175px;
-          flex: 1;
-          margin: 0 0 $margin_medium;
+        picture {
+          max-height: 100%;
           border-radius: $border_radius_primary;
-          align-items: center;      
-          justify-content: center;
-          -webkit-mask-image: -webkit-radial-gradient($color_white, $color_black);
 
-          @include breakpoint(large) {
-            height: 100%;
+          source, img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
             max-height: 100%;
-            margin: 0 $margin_small $margin_extra_small 0;
-          }
-      
-          @include breakpoint(wide) {
-            height: 100%;
-            max-height: 100%;
-            margin: 0 $margin_small $margin_extra_small 0;
-          }
-
-          .image {
-
-            picture {
-              -webkit-mask-image: -webkit-radial-gradient($color_white, $color_black);
-
-              source, img {
-                width: 100%;
-                max-width: 100%;
-                height: auto;
-                max-height: 100%;
-                border-radius: $border_radius_primary;
-                object-fit: cover;
-              }
-            }
-          }
-
-          picture {
-            -webkit-mask-image: -webkit-radial-gradient($color_white, $color_black);
-
-            source, img {
-              width: 100%;
-              max-width: 100%;
-              height: auto;
-              max-height: 100%;
-              border-radius: $border_radius_primary;
-              object-fit: cover;
-            }
+            border-radius: $border_radius_primary;
+            object-fit: cover;
           }
         }
       }
 
-      .about_page_copy_container {
+      .about_page_information_container {
         display: flex;
-        height: 175px;
-        min-height: 0;
-        max-height: 175px;
         flex: 1;
         flex-direction: column;
-        margin: 0 0 $margin_small;
+        background-color: $color_white;
 
-        h1 {
-          margin: 0;
-          font-size: $font_size_large;
+        @include breakpoint(large) {
+          margin: 0 0 0 $margin_small;
+          overflow-y: auto;
+          -webkit-mask-image: linear-gradient(180deg, $color_black 95%, transparent); //sass-lint:disable-line no-vendor-prefixes
+          mask-image: linear-gradient(180deg, $color_black 95%, transparent); 
+        }
+    
+        @include breakpoint(wide) {
+          margin: 0 0 0 $margin_small;
+          overflow-y: auto;
+          -webkit-mask-image: linear-gradient(180deg, $color_black 95%, transparent); //sass-lint:disable-line no-vendor-prefixes
+          mask-image: linear-gradient(180deg, $color_black 95%, transparent); 
         }
 
-        h2 {
+        .about_page_copy {
           margin: 0 0 $margin_small;
-          font-size: $font_size_large;
+
+          h1 {
+            margin: 0;
+            font-size: $font_size_large;
+          }
+
+          h2 {
+            margin: 0 0 $margin_small;
+            font-size: $font_size_large;
+          }
         }
       }
     }

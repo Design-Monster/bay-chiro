@@ -7,6 +7,7 @@ $size_extra_medium: 2.344rem; //37.5px
 $size_large: 3.125rem; //50px
 $size_xl: 4.6875rem; //75px
 $size_xxl: 6.25rem; //100px
+$size_xxxl: 9.375rem; //150px
 
 //Colors
 $color_white: #ffffff;
@@ -48,6 +49,7 @@ $height_extra_medium: $size_extra_medium;
 $height_large: $size_large;
 $height_xl: $size_xl;
 $height_xxl: $size_xxl;
+$height_xxxl: $size_xxxl;
 
 //font-sizes
 $font_size_tiny: clamp(0.5em, 0.5em, 0.8749em); //8px-11.99px

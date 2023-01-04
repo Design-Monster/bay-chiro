@@ -3,10 +3,25 @@
 
 .logo {
   display: flex;
+  height: $height_xxl;
+  min-height: 0;
+  max-height: $height_xxl;
   flex: 1;
   margin: 0 $margin_medium;
   justify-content: center;
   align-items: center;
+
+  @include breakpoint(large) {
+    height: $height_xxl;
+    min-height: 0;
+    max-height: $height_xxl;
+  }
+
+  @include breakpoint(wide) {
+    height: $height_xxl;
+    min-height: 0;
+    max-height: $height_xxl;
+  }
 
   a {
     display: flex;
@@ -27,10 +42,19 @@
     }
   }
 
-  source, img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
+  picture {
     max-height: 100%;
+    border-radius: $border_radius_primary;
+    -webkit-mask-image: -webkit-radial-gradient($color_white, $color_black); //sass-lint:disable-line function-name-format,no-vendor-prefixes
+    mask-image: -webkit-radial-gradient($color_white, $color_black); //sass-lint:disable-line function-name-format,no-vendor-prefixes
+
+    source, img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      max-height: 100%;
+      border-radius: $border_radius_primary;
+      object-fit: cover;
+    }
   }
 }
