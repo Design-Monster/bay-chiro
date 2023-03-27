@@ -15,9 +15,9 @@ module.exports = function () {
         'https://fonts.gstatic.com',
         'http://fonts.gstatic.com',
       ],
-      'img-src': ["'self'"],
+      'img-src': ['self', 'https://imagedelivery.net'],
       'style-src': [
-        "'self'",
+        'self',
         'https://fonts.googleapis.com/',
         'http://fonts.googleapis.com/',
         'unsafe-inline',

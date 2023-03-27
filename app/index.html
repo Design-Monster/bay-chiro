@@ -9,8 +9,47 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon-96x96.png" />
     <link rel="icon" type="image/png" sizes="128x128" href="/assets/images/favicon-128x128.png" />
-    <meta name="author" content="Design Monster">
+    <meta name="author" content="Bay Chiropractic">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- schema -->
+        <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "Chiropractic",
+            "name": "Bay Chiropractic Center",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "147 Park Street, Unit C",
+              "addressLocality": "Rockland",
+              "addressRegion": "ME",
+              "postalCode": "04841"
+            },
+            "telePhone": "207-596-6700",
+            "url": "https://www.baychiro.net",
+            "paymentAccepted": [ "cash", "check", "credit card" ],
+            "openingHours": "Mo,Tu,We,Th,Fr 0-0",
+            "openingHoursSpecification": [ {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+              ],
+              "opens": "0",
+              "closes": "0"
+            } ],
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "44.101890",
+              "longitude": "-69.119078"
+            },
+            "priceRange":"$"
+          
+          }          
+            </script>
+          <!-- end schema -->
 
     {{content-for "head"}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +62,9 @@
   </head>
   <body>
     {{content-for "body"}}
-
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3de106a33d1a40de90475febe3d55270"}'></script>
+    <!-- End Cloudflare Web Analytics -->
     <script src="{{rootURL}}assets/vendor.js"></script>
     <script src="{{rootURL}}assets/bay-chiro.js"></script>
 

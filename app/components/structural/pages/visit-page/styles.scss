@@ -14,7 +14,9 @@
   }
 
   @include breakpoint(wide) {
+    max-width: $width_max_screen_size;
     height: 100vh;
+    margin: auto;
   }
 
   .visit_page_header {
@@ -27,6 +29,13 @@
     max-width: 100vw;
     padding: 0 0 $padding_extra_small;
     background-color: $color_white;
+
+    @include breakpoint(wide) {
+      width: clamp(75%, 100%, $width_max_screen_size);
+      min-width: clamp(75%, 100%, $width_max_screen_size);
+      max-width: $width_max_screen_size;
+      margin: auto;
+    }
 
     .visit_page_logo_container {
       display: flex;

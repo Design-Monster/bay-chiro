@@ -11,4 +11,5 @@ Router.map(function () {
   this.route('visit', function () {});
   this.route('about', function () {});
   this.route('wrong-url', { path: '/*' }, function () {});
+  this.route('policies', function () {});
 });

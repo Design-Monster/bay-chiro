@@ -4,8 +4,7 @@
 .footer {
   display: flex;
   flex: 1;
-  flex-direction: column;
   padding: $padding_extra_small;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: space-between;
 }

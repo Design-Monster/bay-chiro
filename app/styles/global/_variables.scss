@@ -51,6 +51,9 @@ $height_xl: $size_xl;
 $height_xxl: $size_xxl;
 $height_xxxl: $size_xxxl;
 
+//Widths
+$width_max_screen_size: 2560px;
+
 //font-sizes
 $font_size_tiny: clamp(0.5em, 0.5em, 0.8749em); //8px-11.99px
 $font_size_small: clamp(0.875em, 0.875em, 0.99em); //12px-15.99px
