@@ -7,94 +7,146 @@
       <address local-class="contact_container" aria-label="Our phone number">
         <div local-class="phone_number">
           Call us (207) 596-6700
-        </div>   
+        </div>
       </address>
       {{/if}}
     </div>
     {{#if (media 'isSmall')}}
     {{!-- template-lint-disable no-duplicate-landmark-elements --}}
     <nav local-class="about_page_mobile_navigation_container">
-      <Dynamic::Ui::Navigation::Mobile 
-        @routeSlotOne={{this.welcomeRoute}} 
+      <Dynamic::Ui::Navigation::Mobile
+        @routeSlotOne={{this.welcomeRoute}}
         @routeSlotTwo={{this.servicesRoute}}
-        @routeSlotThree={{this.aboutRoute}} 
+        @routeSlotThree={{this.aboutRoute}}
         @routeSlotFour={{this.visitRoute}} />
     </nav>
     {{/if}}
     {{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
     <nav local-class="about_page_desktop_navigation_container">
-      <Dynamic::Ui::Navigation::Desktop 
-        @routeSlotOne={{this.welcomeRoute}} 
+      <Dynamic::Ui::Navigation::Desktop
+        @routeSlotOne={{this.welcomeRoute}}
         @routeSlotTwo={{this.servicesRoute}}
-        @routeSlotThree={{this.aboutRoute}} 
+        @routeSlotThree={{this.aboutRoute}}
         @routeSlotFour={{this.visitRoute}} />
       <address local-class="contact_container" aria-label="Our phone number and email">
         <div local-class="phone_number">
           Call us (207) 596-6700
-        </div>   
+        </div>
       </address>
     </nav>
     {{/if}}
   </header>
   <div local-class="about_page_body">
     <main local-class="about_page_content_container">
-        <span local-class="about_page_image_container">
-          <picture>
-          {{#if (media 'isSmall')}}
-            <source 
-              srcset='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/9286b939-1092-4398-c918-563e69384b00/320x125'
-              loading="eager"
-              alt="Dr. Curtis and Monica standing next to each other and smiling."
-              type="image/webp">
-            <img
-              src='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/9286b939-1092-4398-c918-563e69384b00/320x125'
-              loading="eager"
-              alt="Dr. Curtis and Monica standing next to each other and smiling.">
-          {{/if}}
-          {{#if (media 'isMedium')}}
-            <source
-              srcset='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/cd174468-c526-47da-b876-902062104c00/520x125'
-              loading="eager"
-              alt="Dr. Curtis and Monica standing next to each other and smiling."
-              type="image/webp">
-            <img
-              src='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/cd174468-c526-47da-b876-902062104c00/520x125'
-              loading="eager"
-              alt="Dr. Curtis and Monica standing next to each other and smiling.">
-          {{/if}}
-          {{#if (media 'isLarge')}}
-            <source
-              srcset='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/30e41384-2d97-4410-0dc7-108f028fd600/400x400'
-              loading="eager" 
-              alt="Dr. Curtis and Monica standing next to each other and smiling."
-              type="image/webp">
-            <img
-              src='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/30e41384-2d97-4410-0dc7-108f028fd600/400x400'
-              loading="eager"
-              alt="Dr. Curtis and Monica standing next to each other and smiling.">
-          {{/if}}
-          {{#if (media 'isWide')}}
-            <source
-              srcset='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/30e41384-2d97-4410-0dc7-108f028fd600/800x800'
-              loading="eager"
-              alt="Dr. Curtis and Monica standing next to each other and smiling."
-              type="image/webp">
-            <img
-              src='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/30e41384-2d97-4410-0dc7-108f028fd600/800x800'
-              loading="eager"
-              alt="Dr. Curtis and Monica standing next to each other and smiling.">
-          {{/if}}
-          </picture>
+      <span local-class="about_page_image_container">
+        <picture>
+        {{#if (media 'isSmall')}}
+          <source
+            srcset='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/9286b939-1092-4398-c918-563e69384b00/320x125'
+            loading="eager"
+            alt="Dr. Curtis and Monica standing next to each other and smiling."
+            type="image/webp">
+          <img
+            src='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/9286b939-1092-4398-c918-563e69384b00/320x125'
+            loading="eager"
+            alt="Dr. Curtis and Monica standing next to each other and smiling.">
+        {{/if}}
+        {{#if (media 'isMedium')}}
+          <source
+            srcset='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/cd174468-c526-47da-b876-902062104c00/520x125'
+            loading="eager"
+            alt="Dr. Curtis and Monica standing next to each other and smiling."
+            type="image/webp">
+          <img
+            src='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/cd174468-c526-47da-b876-902062104c00/520x125'
+            loading="eager"
+            alt="Dr. Curtis and Monica standing next to each other and smiling.">
+        {{/if}}
+        {{#if (media 'isLarge')}}
+          <source
+            srcset='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/30e41384-2d97-4410-0dc7-108f028fd600/400x400'
+            loading="eager"
+            alt="Dr. Curtis and Monica standing next to each other and smiling."
+            type="image/webp">
+          <img
+            src='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/30e41384-2d97-4410-0dc7-108f028fd600/400x400'
+            loading="eager"
+            alt="Dr. Curtis and Monica standing next to each other and smiling.">
+        {{/if}}
+        {{#if (media 'isWide')}}
+          <source
+            srcset='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/30e41384-2d97-4410-0dc7-108f028fd600/800x800'
+            loading="eager"
+            alt="Dr. Curtis and Monica standing next to each other and smiling."
+            type="image/webp">
+          <img
+            src='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/30e41384-2d97-4410-0dc7-108f028fd600/800x800'
+            loading="eager"
+            alt="Dr. Curtis and Monica standing next to each other and smiling.">
+        {{/if}}
+        </picture>
+        <picture>
+        {{#if (media 'isSmall')}}
+          <source
+            srcset='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/8ff72673-407e-40a8-049c-d95472e91900/320x125'
+            loading="eager"
+            alt="Dr. Emma Davis sitting and smiling."
+            type="image/webp">
+          <img
+            src='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/8ff72673-407e-40a8-049c-d95472e91900/320x125'
+            loading="eager"
+            alt="Dr. Emma Davis sitting and smiling.">
+        {{/if}}
+        {{#if (media 'isMedium')}}
+          <source
+            srcset='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/36a79058-1038-4024-fe59-89bd26b6b400/520x125'
+            loading="eager"
+            alt="Dr. Emma Davis sitting and smiling."
+            type="image/webp">
+          <img
+            src='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/36a79058-1038-4024-fe59-89bd26b6b400/520x125'
+            loading="eager"
+            alt="Dr. Emma Davis sitting and smiling.">
+        {{/if}}
+        {{#if (media 'isLarge')}}
+          <source
+            srcset='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/9e242662-f387-4ee1-9298-98f9ae694500/400x400'
+            loading="eager"
+            alt="Dr. Emma Davis sitting and smiling."
+            type="image/webp">
+          <img
+            src='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/9e242662-f387-4ee1-9298-98f9ae694500/400x400'
+            loading="eager"
+            alt="Dr. Emma Davis sitting and smiling.">
+        {{/if}}
+        {{#if (media 'isWide')}}
+          <source
+            srcset='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/9e242662-f387-4ee1-9298-98f9ae694500/800x800'
+            loading="eager"
+            alt="Dr. Emma Davis sitting and smiling."
+            type="image/webp">
+          <img
+            src='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/9e242662-f387-4ee1-9298-98f9ae694500/800x800'
+            loading="eager"
+            alt="Dr. Emma Davis sitting and smiling.">
+        {{/if}}
+        </picture>
+      </span>
+      <span local-class="about_page_information_container">
+        <span local-class="about_page_copy">
+          <h1><b>Dr. Blaine Curtis</b></h1>
+          <p>Dr. Curtis is a classically trained chiropractor with a special interest in sports related injuries. He is a 1995 graduate of Northwestern College of Chiropractic, now called Northwestern Health Sciences University, in Bloomington, MN. He relocated back to Maine after graduation and set up practice in Rockland in May of 1996, where he has been ever since. Blaine grew up in Winterport, graduated from Hampden Academy, and then went to the University of Maine in Orono for undergraduate studies. He enjoys most sports, but loves biking and hockey, and is most at home treating fellow athletes of all ages and levels and is a past President of Rockland Rotary.</p>
         </span>
-        <span local-class="about_page_information_container">
-          <span local-class="about_page_copy">
-            <h1><b>Dr. Blaine Curtis</b></h1>
-            <p>Dr. Curtis is a classically trained chiropractor with a special interest in sports related injuries. He is a 1995 graduate of Northwestern College of Chiropractic, now called Northwestern Health Sciences University, in Bloomington, MN. He relocated back to Maine after graduation and set up practice in Rockland in May of 1996, where he has been ever since. Blaine grew up in Winterport, graduated from Hampden Academy, and then went to the University of Maine in Orono for undergraduate studies. He enjoys most sports, but loves biking and hockey, and is most at home treating fellow athletes of all ages and levels and is a past President of Rockland Rotary.</p>
-          </span>
-          <span local-class="about_page_copy">
-            <h1><b>Monica</b></h1>
-            <p>Monica is the person up front who does it all. She helps you set up, sign in, schedule visits, deal with paperwork, and so much more. If you have a question, she has the answer. Monica is also a licensed Chiropractic Assistant and performs many therapy modalities at the office when Dr. Curtis cannot. She enjoys biking, hiking, reading, and gardening in her time off, but her true love is being around animals. She is always ready with a treat whenever a 4-legged friend visits the office.</p>
-          </span>
+        <span local-class="about_page_copy">
+          <h1><b>Monica</b></h1>
+          <p>Monica is the person up front who does it all. She helps you set up, sign in, schedule visits, deal with paperwork, and so much more. If you have a question, she has the answer. Monica is also a licensed Chiropractic Assistant and performs many therapy modalities at the office when Dr. Curtis cannot. She enjoys biking, hiking, reading, and gardening in her time off, but her true love is being around animals. She is always ready with a treat whenever a 4-legged friend visits the office.</p>
+        </span>
+        <span local-class="about_page_copy">
+          <h1><b>Dr. Emma Davis</b></h1>
+          <p>Bay Chiropractic Center is proud to announce the addition of Dr. Emma Davis to our practice!</p>
+          <p>Dr. Davis grew up in Rockland and graduated from St. Joseph's College before heading west to California then Oregon for her Doctoral studies. She is a recent graduate of University of Western States and completed her internship here at our Rockland office in 2023. She is well versed in the newest scientific and medical advances and treatments. Outside of the office she enjoys spending time with family (and her dog Sadie!), staying active, fly fishing and backpacking.</p>
+          <p>Dr. Davis is taking new patients and would be happy to discuss your needs. Call our office today to set up an appointment.</p>
+        </span>
         <footer local-class="about_page_footer_container">
           <Dynamic::Ui::Footer />
         </footer>

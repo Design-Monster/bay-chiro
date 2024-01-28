@@ -20,7 +20,7 @@
   }
 
   .about_page_header {
-    position: fixed; 
+    position: fixed;
     top: 0;
     z-index: 100;
     display: flex;
@@ -102,6 +102,7 @@
     @include breakpoint(medium) {
       height: calc(100vh - calc($height_xxl + $padding_extra_small + $margin_large + $height_xl + $margin_large)); //height of: header, footer, margin-top, margin-bottom of visit_page_body
       flex-direction: row;
+      margin: calc($height_xxl + $margin_medium + $margin_extra_small + $margin_small) 0 0;
     }
 
     @include breakpoint(large) {
@@ -123,13 +124,14 @@
       flex: 1;
       flex-direction: column;
       margin: $margin_small;
+      overflow: auto;
       border-radius: $border_radius_primary;
 
       @include breakpoint(large) {
         flex-direction: row;
         margin: $margin_medium;
       }
-  
+
       @include breakpoint(wide) {
         flex-direction: row;
         margin: $margin_medium;
@@ -137,34 +139,29 @@
 
       .about_page_image_container {
         display: flex;
-        height: 125px;
-        min-height: 125px;
-        max-height: 125px;
+        height: auto;
+        min-height: 0;
+        max-height: 100%;
         flex: 1;
+        flex-direction: column;
         margin: 0 0 $margin_medium;
+        overflow: auto;
         background-clip: border-box;
         border-radius: $border_radius_primary;
-        align-items: center;      
-        justify-content: center;
         -webkit-mask-image: -webkit-radial-gradient($color_white, $color_black); //sass-lint:disable-line function-name-format,no-vendor-prefixes
         mask-image: -webkit-radial-gradient($color_white, $color_black); //sass-lint:disable-line function-name-format,no-vendor-prefixes
 
         @include breakpoint(large) {
-          height: 100%;
-          min-height: 0;
-          max-height: 100%;
           margin: 0 $margin_small $margin_extra_small 0;
         }
-    
+
         @include breakpoint(wide) {
-          height: 100%;
-          min-height: 0;
-          max-height: 100%;
           margin: 0 $margin_small $margin_extra_small 0;
         }
 
         picture {
-          max-height: 100%;
+          max-height: calc(50% - $margin_extra_small);
+          margin: 0 0 $margin_small;
           border-radius: $border_radius_primary;
 
           source, img {
@@ -188,14 +185,14 @@
           margin: 0 0 0 $margin_small;
           overflow-y: auto;
           -webkit-mask-image: linear-gradient(180deg, $color_black 95%, transparent); //sass-lint:disable-line no-vendor-prefixes
-          mask-image: linear-gradient(180deg, $color_black 95%, transparent); 
+          mask-image: linear-gradient(180deg, $color_black 95%, transparent);
         }
-    
+
         @include breakpoint(wide) {
           margin: 0 0 0 $margin_small;
           overflow-y: auto;
           -webkit-mask-image: linear-gradient(180deg, $color_black 95%, transparent); //sass-lint:disable-line no-vendor-prefixes
-          mask-image: linear-gradient(180deg, $color_black 95%, transparent); 
+          mask-image: linear-gradient(180deg, $color_black 95%, transparent);
         }
 
         .about_page_copy {
@@ -211,18 +208,18 @@
             font-size: $font_size_large;
           }
         }
+
+        .about_page_footer_container {
+          display: flex;
+          height: $height_xl;
+          min-height: $height_xl;
+          flex: 1;
+          padding: 0 0 $padding_extra_small;
+          margin: 0 0 $margin_medium;
+          font-size: $font_size_small;
+          background-color: $color_white;
+        }
       }
     }
-  }
-
-  .about_page_footer_container {
-    display: flex;
-    height: $height_xl;
-    min-height: $height_xl;
-    flex: 1;
-    padding: 0 0 $padding_extra_small;
-    margin: 0 0 $margin_medium;
-    font-size: $font_size_small;
-    background-color: $color_white;
   }
 }
