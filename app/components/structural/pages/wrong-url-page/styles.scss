@@ -20,7 +20,7 @@
   }
 
   .wrong_url_page_header {
-    position: fixed; 
+    position: fixed;
     top: 0;
     z-index: 100;
     display: flex;
@@ -97,7 +97,7 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    margin: calc($height_xxl + $margin_medium + $margin_extra_small + $margin_small) 0 $margin_large;
+    margin: calc($height_xxl + $margin_extra_small + $margin_small) 0 $margin_large;
 
     @include breakpoint(medium) {
       height: calc(100vh - calc($height_xxl + $padding_extra_small + $margin_large + $height_xl + $margin_large)); //height of: header, footer, margin-top, margin-bottom of visit_page_body
@@ -128,7 +128,7 @@
         flex-direction: row;
         margin: $margin_medium;
       }
-  
+
       @include breakpoint(wide) {
         flex-direction: row;
         margin: $margin_medium;
@@ -141,7 +141,7 @@
         max-height: 125px;
         flex: 1;
         margin: 0 0 $margin_medium;
-        align-items: center;      
+        align-items: center;
         justify-content: center;
         -webkit-mask-image: -webkit-radial-gradient($color_white, $color_black); //sass-lint:disable-line function-name-format,no-vendor-prefixes
         mask-image: -webkit-radial-gradient($color_white, $color_black); //sass-lint:disable-line function-name-format,no-vendor-prefixes
@@ -151,7 +151,7 @@
           min-height: 0;
           max-height: 100%;
         }
-    
+
         @include breakpoint(wide) {
           height: 100%;
           min-height: 0;
@@ -182,14 +182,14 @@
           margin: 0 0 0 $margin_small;
           overflow-y: auto;
           -webkit-mask-image: linear-gradient(180deg, $color_black 95%, transparent); //sass-lint:disable-line no-vendor-prefixes
-          mask-image: linear-gradient(180deg, $color_black 95%, transparent); 
+          mask-image: linear-gradient(180deg, $color_black 95%, transparent);
         }
-    
+
         @include breakpoint(wide) {
           margin: 0 0 0 $margin_small;
           overflow-y: auto;
           -webkit-mask-image: linear-gradient(180deg, $color_black 95%, transparent); //sass-lint:disable-line no-vendor-prefixes
-          mask-image: linear-gradient(180deg, $color_black 95%, transparent); 
+          mask-image: linear-gradient(180deg, $color_black 95%, transparent);
         }
 
         .wrong_url_page_copy {

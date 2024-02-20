@@ -98,7 +98,7 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    margin: calc($height_xxl + $margin_medium + $margin_extra_small + $margin_small) 0 $margin_large;
+    margin: calc($height_xxl + $margin_extra_small + $margin_small) 0 $margin_large;
 
     @include breakpoint(medium) {
       height: calc(100vh - calc($height_xxl + $padding_extra_small + $margin_large + $height_xl + $margin_large)); //height of: header, footer, margin-top, margin-bottom of visit_page_body

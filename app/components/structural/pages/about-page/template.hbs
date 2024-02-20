@@ -3,13 +3,6 @@
   <header local-class="about_page_header">
     <div local-class="about_page_logo_container">
       <Dynamic::Ui::Navigation::Logo />
-      {{#if (media 'isSmall')}}
-      <address local-class="contact_container" aria-label="Our phone number">
-        <div local-class="phone_number">
-          Call us (207) 596-6700
-        </div>
-      </address>
-      {{/if}}
     </div>
     {{#if (media 'isSmall')}}
     {{!-- template-lint-disable no-duplicate-landmark-elements --}}
@@ -28,11 +21,6 @@
         @routeSlotTwo={{this.servicesRoute}}
         @routeSlotThree={{this.aboutRoute}}
         @routeSlotFour={{this.visitRoute}} />
-      <address local-class="contact_container" aria-label="Our phone number and email">
-        <div local-class="phone_number">
-          Call us (207) 596-6700
-        </div>
-      </address>
     </nav>
     {{/if}}
   </header>

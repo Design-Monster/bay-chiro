@@ -3,36 +3,24 @@
   <header local-class="services_page_header">
     <div local-class="services_page_logo_container">
       <Dynamic::Ui::Navigation::Logo />
-      {{#if (media 'isSmall')}}
-      <address local-class="contact_container" aria-label="Our phone number">
-        <div local-class="phone_number">
-          Call us (207) 596-6700
-        </div>   
-      </address>
-      {{/if}}
     </div>
     {{#if (media 'isSmall')}}
     {{!-- template-lint-disable no-duplicate-landmark-elements --}}
     <nav local-class="services_page_mobile_navigation_container">
-      <Dynamic::Ui::Navigation::Mobile 
-        @routeSlotOne={{this.welcomeRoute}} 
+      <Dynamic::Ui::Navigation::Mobile
+        @routeSlotOne={{this.welcomeRoute}}
         @routeSlotTwo={{this.servicesRoute}}
-        @routeSlotThree={{this.aboutRoute}} 
+        @routeSlotThree={{this.aboutRoute}}
         @routeSlotFour={{this.visitRoute}} />
     </nav>
     {{/if}}
     {{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
     <nav local-class="services_page_desktop_navigation_container">
-      <Dynamic::Ui::Navigation::Desktop 
-        @routeSlotOne={{this.welcomeRoute}} 
+      <Dynamic::Ui::Navigation::Desktop
+        @routeSlotOne={{this.welcomeRoute}}
         @routeSlotTwo={{this.servicesRoute}}
-        @routeSlotThree={{this.aboutRoute}} 
+        @routeSlotThree={{this.aboutRoute}}
         @routeSlotFour={{this.visitRoute}} />
-      <address local-class="contact_container" aria-label="Our phone number and email">
-        <div local-class="phone_number">
-          Call us (207) 596-6700
-        </div>   
-      </address>
     </nav>
     {{/if}}
   </header>
@@ -41,7 +29,7 @@
       <span local-class="services_page_image_container">
         {{#if (media 'isSmall')}}
         <picture>
-          <source 
+          <source
             srcset="https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/5a764029-e53d-4ac3-fae2-462d30913500/320x125"
             loading="eager"
             alt="Chiropractor table."
@@ -54,7 +42,7 @@
         {{/if}}
         {{#if (media 'isMedium')}}
         <picture>
-          <source 
+          <source
             srcset='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/5a764029-e53d-4ac3-fae2-462d30913500/520x125'
             loading="eager"
             alt="Chiropractor table."

@@ -3,38 +3,24 @@
   <header local-class="visit_page_header">
     <div local-class="visit_page_logo_container">
       <Dynamic::Ui::Navigation::Logo />
-      {{#if (media 'isSmall')}}
-      <address local-class="contact_container" aria-label="Our phone number">
-        <div local-class="phone_number">
-          Call us (207) 596-6700
-        </div>   
-      </address>
-      {{/if}}
     </div>
     {{#if (media 'isSmall')}}
     {{!-- template-lint-disable no-duplicate-landmark-elements --}}
     <nav local-class="visit_page_mobile_navigation_container">
-      <Dynamic::Ui::Navigation::Mobile 
-        @routeSlotOne={{this.welcomeRoute}} 
+      <Dynamic::Ui::Navigation::Mobile
+        @routeSlotOne={{this.welcomeRoute}}
         @routeSlotTwo={{this.servicesRoute}}
-        @routeSlotThree={{this.aboutRoute}} 
+        @routeSlotThree={{this.aboutRoute}}
         @routeSlotFour={{this.visitRoute}} />
     </nav>
     {{/if}}
     {{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
     <nav local-class="visit_page_desktop_navigation_container">
-      <Dynamic::Ui::Navigation::Desktop 
-        @routeSlotOne={{this.welcomeRoute}} 
+      <Dynamic::Ui::Navigation::Desktop
+        @routeSlotOne={{this.welcomeRoute}}
         @routeSlotTwo={{this.servicesRoute}}
-        @routeSlotThree={{this.aboutRoute}} 
+        @routeSlotThree={{this.aboutRoute}}
         @routeSlotFour={{this.visitRoute}} />
-      <address local-class="contact_container" aria-label="Our phone number and email">
-        {{#if (media 'isSmall')}}
-        <div local-class="phone_number">
-          Call us (207) 596-6700
-        </div>
-        {{/if}}   
-      </address>
     </nav>
     {{/if}}
   </header>
@@ -67,7 +53,7 @@
 								{{/if}}
     						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
                 <span>Tuesday</span>
-								{{/if}}              
+								{{/if}}
 								</div>
               <div local-class="visit_page_table_cell_header middle_cell">
                 {{#if (media 'isSmall')}}
@@ -75,7 +61,7 @@
 								{{/if}}
     						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
                 <span>Wednesday</span>
-								{{/if}} 
+								{{/if}}
               </div>
 							<div local-class="visit_page_table_cell_header middle_cell">
 								{{#if (media 'isSmall')}}
@@ -83,7 +69,7 @@
 								{{/if}}
     						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
                 <span>Thursday</span>
-								{{/if}} 
+								{{/if}}
               </div>
               <div local-class="visit_page_table_cell_header">
 								{{#if (media 'isSmall')}}
@@ -91,7 +77,7 @@
 								{{/if}}
     						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
                 <span>Friday</span>
-								{{/if}} 
+								{{/if}}
               </div>
             </div>
             <div local-class="visit_page_table_section">
@@ -101,7 +87,7 @@
 								{{/if}}
     						{{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
                 <span>8 am - 12 noon</span>
-								{{/if}} 
+								{{/if}}
               </div>
               <div local-class="visit_page_table_cell middle_cell">
 								{{#if (media 'isSmall')}}

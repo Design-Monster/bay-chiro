@@ -3,13 +3,6 @@
   <header local-class="index_page_header">
     <div local-class="index_page_logo_container">
       <Dynamic::Ui::Navigation::Logo />
-      {{#if (media 'isSmall')}}
-      <address local-class="contact_container" aria-label="Our phone number">
-        <div local-class="phone_number">
-          Call us (207) 596-6700
-        </div>
-      </address>
-      {{/if}}
     </div>
     {{#if (media 'isSmall')}}
     {{!-- template-lint-disable no-duplicate-landmark-elements --}}
@@ -28,11 +21,6 @@
         @routeSlotTwo={{this.servicesRoute}}
         @routeSlotThree={{this.aboutRoute}}
         @routeSlotFour={{this.visitRoute}} />
-      <address local-class="contact_container" aria-label="Our phone number and email">
-        <div local-class="phone_number">
-          Call us (207) 596-6700
-        </div>
-      </address>
     </nav>
     {{/if}}
   </header>
@@ -89,9 +77,9 @@
       <div local-class="index_page_information_container">
         <div local-class="index_page_copy">
           <h1><b>Welcome to Bay Chiropractic Center!</b></h1>
-          <p><b><span local-class="blue_text">**Bay Chiropractic Center is proud to announce the 2024 addition of Dr. Emma Davis to our practice! Read more about Emma <LinkTo @route="about">here</LinkTo>.</span></b></p>
+          <p><b><span local-class="blue_text">**Bay Chiropractic Center is proud to announce the 2024 addition of Dr. Emma Davis to our practice! Read more about Emma on our<LinkTo @route="about" aria-label="About page">About page</LinkTo>.</span></b></p>
           <p>Dr. Curtis started Bay Chiropractic Center in 1996 and continues serving MidCoast Maine by offering complete, cutting edge chiropractic care in a comfortable and friendly office setting.</p>
-          <p><b>New patients</b> | <a href="https://www.mychirotouch.com/patientintake/?clientid=BCCP0013" target="_blank" rel="noopener noreferrer" aria-label="New Patient Forms">Click here to fill out new patient forms</a></p>
+          <p><b>New patients</b> | <a href="https://www.mychirotouch.com/patientintake/?clientid=BCCP0013" target="_blank" rel="noopener noreferrer" aria-label="Link to new patient forms">Link to new patient forms</a></p>
           <p><b>We are now a paperless office!</b> | We send text reminders for appointments and emails for receipts or any other paperwork.</p>
           <p><b>Services provided</b> | Chiropractic adjustments with a variety of therapies for treating pain and soft tissue damage in the office including: ultrasound, interferential, TENS, Kinesiotape, cold laser, and Radial Pulse Wave. We specialize in sports injuries and optimizing performance throughout training and competition.</p>
           <p><b>Health insurance</b> | We are no longer contracted with any private health insurance networks. All patients will be self-pay at time of service. We will provide the necessary paperwork, upon request, so that you may submit the claim to your insurance company.</p>

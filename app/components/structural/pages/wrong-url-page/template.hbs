@@ -3,36 +3,24 @@
   <header local-class="wrong_url_page_header">
     <div local-class="wrong_url_page_logo_container">
       <Dynamic::Ui::Navigation::Logo />
-      {{#if (media 'isSmall')}}
-      <address local-class="contact_container" aria-label="Our phone number">
-        <div local-class="phone_number">
-          Call us (207) 596-6700
-        </div>   
-      </address>
-      {{/if}}
     </div>
     {{#if (media 'isSmall')}}
     {{!-- template-lint-disable no-duplicate-landmark-elements --}}
     <nav local-class="wrong_url_page_mobile_navigation_container">
-      <Dynamic::Ui::Navigation::Mobile 
-        @routeSlotOne={{this.welcomeRoute}} 
+      <Dynamic::Ui::Navigation::Mobile
+        @routeSlotOne={{this.welcomeRoute}}
         @routeSlotTwo={{this.servicesRoute}}
-        @routeSlotThree={{this.aboutRoute}} 
+        @routeSlotThree={{this.aboutRoute}}
         @routeSlotFour={{this.visitRoute}} />
     </nav>
     {{/if}}
     {{#if (or (media 'isMedium') (media 'isLarge') (media 'isWide'))}}
     <nav local-class="wrong_url_page_desktop_navigation_container">
-      <Dynamic::Ui::Navigation::Desktop 
-        @routeSlotOne={{this.welcomeRoute}} 
+      <Dynamic::Ui::Navigation::Desktop
+        @routeSlotOne={{this.welcomeRoute}}
         @routeSlotTwo={{this.servicesRoute}}
-        @routeSlotThree={{this.aboutRoute}} 
+        @routeSlotThree={{this.aboutRoute}}
         @routeSlotFour={{this.visitRoute}} />
-      <address local-class="contact_container" aria-label="Our phone number and email">
-        <div local-class="phone_number">
-          Call us (207) 596-6700
-        </div>   
-      </address>
     </nav>
     {{/if}}
   </header>
@@ -41,7 +29,7 @@
       <span local-class="wrong_url_page_image_container">
         <picture>
         {{#if (media 'isSmall')}}
-          <source 
+          <source
             srcset='https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/7a341fce-9d24-420b-cfdf-c519287fb600/320x125'
             loading="eager"
             alt="Bay Chiropractic Center Building."
@@ -65,7 +53,7 @@
         {{#if (media 'isLarge')}}
           <source
             srcset="https://imagedelivery.net/uSmqQyv4nG5_KuZ4KHY0Ew/07e86c0d-6e7a-4747-e4f1-d58052ef9900/400x400"
-            loading="eager" 
+            loading="eager"
             alt="Bay Chiropractic Center Building."
             type="image/webp">
           <img
@@ -92,7 +80,7 @@
             <p>That's okay! We think you should take it as a sign to give us a call. The number is right at the top there. </p>
         </div>
         <div local-class="wrong_url_page_copy">
-          
+
         </div>
         <footer local-class="wrong_url_page_footer_container">
           <Dynamic::Ui::Footer />

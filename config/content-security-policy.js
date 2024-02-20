@@ -3,7 +3,7 @@
 module.exports = function () {
   return {
     delivery: ['header'],
-    enabled: true, //true for production
+    enabled: false, //true for production
     failTests: true,
     policy: {
       'connect-src': ['self'],
@@ -24,6 +24,6 @@ module.exports = function () {
       ],
       'media-src': null,
     },
-    reportOnly: false, //false for production
+    reportOnly: true, //false for production
   };
 };

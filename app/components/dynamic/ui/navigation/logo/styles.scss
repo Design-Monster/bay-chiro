@@ -44,16 +44,12 @@
 
   picture {
     max-height: 100%;
-    border-radius: $border_radius_primary;
-    -webkit-mask-image: -webkit-radial-gradient($color_white, $color_black); //sass-lint:disable-line function-name-format,no-vendor-prefixes
-    mask-image: -webkit-radial-gradient($color_white, $color_black); //sass-lint:disable-line function-name-format,no-vendor-prefixes
 
     source, img {
       width: 100%;
       max-width: 100%;
       height: auto;
       max-height: 100%;
-      border-radius: $border_radius_primary;
       object-fit: cover;
     }
   }
