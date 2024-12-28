@@ -35,6 +35,7 @@
       min-width: clamp(75%, 100%, $width_max_screen_size);
       max-width: $width_max_screen_size;
       margin: auto;
+      gap: $size_small;
     }
 
     .index_page_logo_container {
@@ -138,14 +139,13 @@
 
       .index_page_image_container {
         display: flex;
-        height: 125px;
-        min-height: 125px;
-        max-height: 125px;
+        height: 300px;
+        min-height: 300px;
+        max-height: 300px;
         flex: 1;
         margin: 0 0 $margin_medium;
         background-clip: border-box;
         border-radius: $border_radius_primary;
-        align-items: center;
         justify-content: center;
         -webkit-mask-image: -webkit-radial-gradient($color_white, $color_black); //sass-lint:disable-line function-name-format,no-vendor-prefixes
         mask-image: -webkit-radial-gradient($color_white, $color_black); //sass-lint:disable-line function-name-format,no-vendor-prefixes
@@ -266,8 +266,19 @@
     min-height: $height_xl;
     flex: 1;
     padding: 0 0 $padding_extra_small;
-    margin: 0 0 $margin_medium;
     font-size: $font_size_small;
     background-color: $color_white;
+
+    @include breakpoint(medium) {
+      margin: 0 0 $margin_medium;
+    }
+
+    @include breakpoint(large) {
+      margin: 0 0 $margin_medium;
+    }
+
+    @include breakpoint(wide) {
+      margin: 0 0 $margin_medium;
+    }
   }
 }

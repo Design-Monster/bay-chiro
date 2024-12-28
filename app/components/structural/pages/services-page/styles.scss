@@ -35,6 +35,7 @@
       min-width: clamp(75%, 100%, $width_max_screen_size);
       max-width: $width_max_screen_size;
       margin: auto;
+      gap: $size_small;
     }
 
     .services_page_logo_container {
