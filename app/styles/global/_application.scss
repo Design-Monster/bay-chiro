@@ -16,12 +16,10 @@ body {
 	font-weight: 400;
 
 	@include breakpoint(large) {
-		overflow-y: hidden;
 		font-size: $font_size_regular;
   }
 
   @include breakpoint(wide) {
-		overflow-y: hidden;
 		font-size: $font_size_regular;
   }
 }

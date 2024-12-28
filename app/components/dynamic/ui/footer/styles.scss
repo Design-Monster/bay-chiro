@@ -4,7 +4,22 @@
 .footer {
   display: flex;
   flex: 1;
-  padding: $padding_extra_small;
-  align-items: flex-end;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+
+  @include breakpoint(large) {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  @include breakpoint(wide) {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .copy_container {
+    display: flex;
+    flex: 1;
+    gap: $size_small;
+  }
 }

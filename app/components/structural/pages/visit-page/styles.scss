@@ -6,17 +6,20 @@
   @include ease_transition();
   display: flex;
   min-height: 100vh;
+  max-height: 100vh;
   flex: 1;
   flex-direction: column;
 
   @include breakpoint(large) {
     height: 100vh;
+    overflow: hidden;
   }
 
   @include breakpoint(wide) {
     max-width: $width_max_screen_size;
     height: 100vh;
     margin: auto;
+    overflow: hidden;
   }
 
   .visit_page_header {
@@ -35,6 +38,7 @@
       min-width: clamp(75%, 100%, $width_max_screen_size);
       max-width: $width_max_screen_size;
       margin: auto;
+      gap: $size_small;
     }
 
     .visit_page_logo_container {
@@ -136,36 +140,60 @@
 
       .visit_page_image_container {
         display: flex;
-        height: 125px;
-        min-height: 125px;
-        max-height: 125px;
         flex: 1;
+        flex-direction: column;
         margin: 0 0 $margin_medium;
         border-radius: $border_radius_primary;
         justify-content: center;
         -webkit-mask-image: -webkit-radial-gradient($color_white, $color_black); //sass-lint:disable-line function-name-format,no-vendor-prefixes
         mask-image: -webkit-radial-gradient($color_white, $color_black); //sass-lint:disable-line function-name-format,no-vendor-prefixes
+        gap: $size_small;
 
-        @include breakpoint(large) {
-          height: 100%;
-          min-height: 0;
-          max-height: 100%;
-          margin: 0 $margin_small $margin_extra_small 0;
-        }
+        span {
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+          gap: $size_small;
 
-        @include breakpoint(wide) {
-          height: 100%;
-          min-height: 0;
-          max-height: 100%;
-          margin: 0 $margin_small $margin_extra_small 0;
-        }
+          &.last {
+            justify-content: space-between;
 
-        iframe {
-          width: 100%;
-          height: 100%;
-          min-height: 50vh;
-          border: 0;
-          border-radius: $border_radius_primary;
+            @include breakpoint(large) {
+              height: 300px;
+              min-height: 300px;
+              max-height: 300px;
+              flex-direction: row;
+            }
+
+            @include breakpoint(wide) {
+              height: 300px;
+              min-height: 300px;
+              max-height: 300px;
+              flex-direction: row;
+            }
+          }
+
+          picture {
+            max-height: 100%;
+            border-radius: $border_radius_primary;
+
+            source, img {
+              width: 100%;
+              max-width: 100%;
+              height: auto;
+              max-height: 100%;
+              border-radius: $border_radius_primary;
+              object-fit: cover;
+            }
+          }
+
+          iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+            border: 0;
+            border-radius: $border_radius_primary;
+          }
         }
       }
 

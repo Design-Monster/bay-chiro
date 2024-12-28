@@ -9,13 +9,8 @@
   flex: 1;
   flex-direction: column;
 
-  @include breakpoint(large) {
-    height: 100vh;
-  }
-
   @include breakpoint(wide) {
     max-width: $width_max_screen_size;
-    height: 100vh;
     margin: auto;
   }
 
@@ -35,6 +30,7 @@
       min-width: clamp(75%, 100%, $width_max_screen_size);
       max-width: $width_max_screen_size;
       margin: auto;
+      gap: $size_small;
     }
 
     .about_page_logo_container {
@@ -98,105 +94,98 @@
     flex: 1;
     flex-direction: column;
     margin: calc($height_xxl + $margin_extra_small + $margin_small) 0 $margin_large;
+    overflow: auto;
 
     @include breakpoint(medium) {
-      height: calc(100vh - calc($height_xxl + $padding_extra_small + $margin_large + $height_xl + $margin_large)); //height of: header, footer, margin-top, margin-bottom of visit_page_body
       flex-direction: row;
-      margin: calc($height_xxl + $margin_medium + $margin_extra_small + $margin_small) 0 0;
+      margin: calc($height_xxl + $margin_extra_small + $margin_small) 0 0;
     }
 
     @include breakpoint(large) {
-      height: calc(100vh - calc($height_xxl + $padding_extra_small + $margin_large + $height_xl + $margin_large)); //height of: header, footer, margin-top, margin-bottom of visit_page_body
       flex-direction: row;
-      margin: calc($height_xl + $margin_large) 0 $margin_large;
+      margin: calc($height_xxl + $margin_extra_small + $margin_small) 0 0;
     }
 
     @include breakpoint(wide) {
-      height: calc(100vh - calc($height_xxl + $padding_extra_small + $margin_large + $height_xl + $margin_large)); //height of: header, footer, margin-top, margin-bottom of visit_page_body
       flex-direction: row;
-      margin: calc($height_xl + $margin_large) 0 $margin_large;
+      margin: calc($height_xxl + $margin_extra_small + $margin_small) 0 0;
     }
 
-    .about_page_content_container {
+    .about_page__content_container {
       display: flex;
-      height: 100%;
-      min-height: 100%;
       flex: 1;
       flex-direction: column;
       margin: $margin_small;
       overflow: auto;
       border-radius: $border_radius_primary;
+      gap: $size_small;
 
       @include breakpoint(large) {
-        flex-direction: row;
-        margin: $margin_medium;
+        margin: $margin_medium $margin_medium 0;
       }
 
       @include breakpoint(wide) {
-        flex-direction: row;
-        margin: $margin_medium;
+        margin: $margin_medium $margin_medium 0;
       }
 
-      .about_page_image_container {
+      .about_page__profile_container {
         display: flex;
-        height: auto;
-        min-height: 0;
-        max-height: 100%;
         flex: 1;
         flex-direction: column;
-        margin: 0 0 $margin_medium;
-        overflow: auto;
-        background-clip: border-box;
-        border-radius: $border_radius_primary;
+        gap: $size_small;
         -webkit-mask-image: -webkit-radial-gradient($color_white, $color_black); //sass-lint:disable-line function-name-format,no-vendor-prefixes
         mask-image: -webkit-radial-gradient($color_white, $color_black); //sass-lint:disable-line function-name-format,no-vendor-prefixes
 
         @include breakpoint(large) {
-          margin: 0 $margin_small $margin_extra_small 0;
+          max-height: 100vh;
+          flex-direction: row;
         }
 
         @include breakpoint(wide) {
-          margin: 0 $margin_small $margin_extra_small 0;
+          max-height: 100vh;
+          flex-direction: row;
         }
 
-        picture {
-          max-height: calc(50% - $margin_extra_small);
-          margin: 0 0 $margin_small;
+        .profile__image_container {
+          display: flex;
+          flex: 1;
+          background-clip: border-box;
           border-radius: $border_radius_primary;
+          justify-content: center;
+          align-items: center;
 
-          source, img {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
+          picture {
+            width: 300px;
+            height: 300px;
             max-height: 100%;
             border-radius: $border_radius_primary;
-            object-fit: cover;
+
+            source, img {
+              width: 100%;
+              max-width: 100%;
+              height: auto;
+              max-height: 100%;
+              border-radius: $border_radius_primary;
+              object-fit: cover;
+            }
           }
         }
-      }
 
-      .about_page_information_container {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        background-color: $color_white;
+        .profile__copy_container {
+          display: flex;
+          max-height: 300px;
+          flex: 1;
+          flex-direction: column;
+          padding: $padding_small 0;
+          background-color: $color_white;
 
-        @include breakpoint(large) {
-          margin: 0 0 0 $margin_small;
-          overflow-y: auto;
-          -webkit-mask-image: linear-gradient(180deg, $color_black 95%, transparent); //sass-lint:disable-line no-vendor-prefixes
-          mask-image: linear-gradient(180deg, $color_black 95%, transparent);
-        }
+          @include breakpoint(large) {
+            overflow-y: auto;
+          }
 
-        @include breakpoint(wide) {
-          margin: 0 0 0 $margin_small;
-          overflow-y: auto;
-          -webkit-mask-image: linear-gradient(180deg, $color_black 95%, transparent); //sass-lint:disable-line no-vendor-prefixes
-          mask-image: linear-gradient(180deg, $color_black 95%, transparent);
-        }
-
-        .about_page_copy {
-          margin: 0 0 $margin_small;
+          @include breakpoint(wide) {
+            overflow-y: auto;
+          }
 
           h1 {
             margin: 0;
@@ -208,16 +197,28 @@
             font-size: $font_size_large;
           }
         }
+      }
 
-        .about_page_footer_container {
-          display: flex;
-          height: $height_xl;
-          min-height: $height_xl;
-          flex: 1;
-          padding: 0 0 $padding_extra_small;
-          margin: 0 0 $margin_medium;
-          font-size: $font_size_small;
-          background-color: $color_white;
+      .about_page__footer_container {
+        display: flex;
+        height: $height_xl;
+        min-height: $height_xl;
+        flex: 1;
+        padding: 0 0 $padding_extra_small;
+        margin: $margin_small 0 0;
+        font-size: $font_size_small;
+        background-color: $color_white;
+
+        @include breakpoint(medium) {
+          margin: $margin_medium 0 0;
+        }
+
+        @include breakpoint(large) {
+          margin: $margin_medium 0 0;
+        }
+
+        @include breakpoint(wide) {
+          margin: $margin_medium 0 0;
         }
       }
     }
